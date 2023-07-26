@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:37:59 by djin              #+#    #+#             */
-/*   Updated: 2023/07/24 19:58:44 by djin             ###   ########.fr       */
+/*   Updated: 2023/07/26 20:49:01 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,11 @@ int		checks(t_node *stack_a, char *str);
 
 //lst_utils
 t_node	*lst_first_last(t_node *node, bool is_last);
-void	clear_lst(t_node *node);
+void	clear_lst(t_node *node, bool loop);
 t_node	*new_node(int content);
 t_node	*node_join(t_node *node, int content);
+
+//debug
+void	print_stack(t_node *stack_a, t_node *stack_b);
 
 #endif

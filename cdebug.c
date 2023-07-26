@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   cdebug.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 18:24:12 by djin              #+#    #+#             */
-/*   Updated: 2023/07/26 20:50:41 by djin             ###   ########.fr       */
+/*   Created: 2023/07/26 20:12:34 by djin              #+#    #+#             */
+/*   Updated: 2023/07/26 20:56:49 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	print_stack(t_node *stack_a, t_node *stack_b)
 {
-	t_node	*stack_a;
-	t_node	*stack_b;
-	int		i;
-
-	i = 0;
-	stack_a = NULL;
-	stack_b = NULL;
-	if (argc == 2)
-		ft_split(argv[1], ' ');
-	if (argc == 2)
-		i = -1;
-	if (argc > 1)
+	while (stack_a->content != 0 || stack_b->content != 0)
 	{
-		while (argv[++i])
+		if (stack_a != NULL)
 		{
-			if (checks(stack_a, argv[i]) == 0)
-			{
-				error_exit(stack_a);
-			}
-			stack_a = node_join(stack_a, ft_atoi(argv[i]));
-			print_stack(stack_a, stack_b);
+			ft_printf("%d ", stack_a->content);
+			stack_a = stack_a->next;
+		}
+		else if (stack_b != NULL)
+		{
+			ft_printf("%d ", stack_b->content);
+			stack_b = stack_b->next;
 		}
 	}
-	ft_printf ("\n");
+	ft_printf("\n");
 }

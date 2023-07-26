@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 12:47:36 by djin              #+#    #+#             */
-/*   Updated: 2023/07/24 20:00:17 by djin             ###   ########.fr       */
+/*   Updated: 2023/07/26 20:52:38 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,29 @@ t_node	*lst_first_last(t_node *node, bool is_last)
 	}
 }
 
-//removes all the lst
-void	clear_lst(t_node *node)
+//removes lst
+//bool loop is wether to run the while loop or not
+void	clear_lst(t_node *node, bool loop)
 {
 	t_node	*tmp;
 
 	if (!node)
 		return ;
-	node = lst_last(node);
-	while (node)
+	node = lst_first_last(node, true);
+	if (!loop)
 	{
 		tmp = node -> next;
 		free(node);
 		node = tmp;
+	}
+	else
+	{
+		while (node)
+		{
+			tmp = node -> next;
+			free(node);
+			node = tmp;
+		}
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 21:21:43 by djin              #+#    #+#             */
-/*   Updated: 2023/07/24 16:45:45 by djin             ###   ########.fr       */
+/*   Updated: 2023/07/25 09:47:38 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	check_space(char c)
 
 void	error_exit(t_node *stack_a)
 {
-	clear_lst(stack_a);
+	clear_lst(stack_a, true);
 	ft_printf("ERROR\n");
 	exit(1);
 }
