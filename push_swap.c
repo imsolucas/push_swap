@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:24:12 by djin              #+#    #+#             */
-/*   Updated: 2023/07/26 20:50:41 by djin             ###   ########.fr       */
+/*   Updated: 2023/07/28 14:18:05 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ int	main(int argc, char **argv)
 			print_stack(stack_a, stack_b);
 		}
 	}
-	ft_printf ("\n");
+	// ft_printf ("\n");
 }

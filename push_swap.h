@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:37:59 by djin              #+#    #+#             */
-/*   Updated: 2023/07/26 20:49:01 by djin             ###   ########.fr       */
+/*   Updated: 2023/07/28 14:08:39 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,8 @@ t_node	*node_join(t_node *node, int content);
 
 //debug
 void	print_stack(t_node *stack_a, t_node *stack_b);
+
+//operation
+bool	push(t_node **from, t_node **to);
 
 #endif
