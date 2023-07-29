@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 19:46:17 by djin              #+#    #+#             */
-/*   Updated: 2023/07/28 17:36:30 by djin             ###   ########.fr       */
+/*   Updated: 2023/07/29 15:30:53 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,10 @@ bool	rotate(t_node **stack, bool reverse)
 		(*stack)->prev = NULL;
 		tmp->next = NULL;
 		tmp->prev = lst_first_last(*stack, true);
+		lst_first_last(*stack, true)->next = tmp;
+	}
+	else
+	{
+		(*stack) = lst_first_last(*stack, true);
 	}
 }
