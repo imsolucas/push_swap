@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 12:47:36 by djin              #+#    #+#             */
-/*   Updated: 2023/07/26 20:52:38 by djin             ###   ########.fr       */
+/*   Updated: 2023/07/31 14:01:19 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ t_node	*lst_first_last(t_node *node, bool is_last)
 {
 	if (!is_last)
 	{
+		// ft_printf("TRIGGERED.");
 		while (node != NULL && node -> prev != NULL)
 			node = node -> prev;
 		return (node);

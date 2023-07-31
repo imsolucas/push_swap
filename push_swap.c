@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:24:12 by djin              #+#    #+#             */
-/*   Updated: 2023/07/28 14:18:05 by djin             ###   ########.fr       */
+/*   Updated: 2023/07/31 14:24:58 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,13 @@ int	main(int argc, char **argv)
 	{
 		while (argv[++i])
 		{
-			if (checks(stack_a, argv[i]) == 0)
+			if (checks(stack_a, argv[i]) == false)
 			{
 				error_exit(stack_a);
 			}
 			stack_a = node_join(stack_a, ft_atoi(argv[i]));
+			stack_a = lst_first_last(stack_a, false);
+			rotate(&stack_a, false);
 			print_stack(stack_a, stack_b);
 		}
 	}
