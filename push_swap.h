@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:37:59 by djin              #+#    #+#             */
-/*   Updated: 2023/07/31 13:56:37 by djin             ###   ########.fr       */
+/*   Updated: 2023/08/01 12:57:08 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_node
 long	ft_atol_checker(const char *str, t_node *stack_a);
 void	error_exit(t_node *stack_a);
 int		check_space(char c);
-int		checks(t_node *stack_a, char *str);
+bool	num_checks(const char *str, t_node *stacks);
 
 //lst_utils
 t_node	*lst_first_last(t_node *node, bool is_last);

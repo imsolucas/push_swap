@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:37:07 by djin              #+#    #+#             */
-/*   Updated: 2023/07/28 13:37:09 by djin             ###   ########.fr       */
+/*   Updated: 2023/08/01 13:49:51 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,39 +30,28 @@ void	error_exit(t_node *stack_a)
 {
 	clear_lst(stack_a, true);
 	ft_printf("ERROR\n");
-	exit(1);
+	exit(true);
 }
 
 long	ft_atol_checker(const char *str, t_node *stack_a)
 {
-	long	num;
-	int		result;
+	int	is_neg;
+	int	results;
 
-	num = 1;
-	result = 0;
-	while (check_space(*str))
+	is_neg = 1;
+	results = 0;
+	if (check_space(*str))
 		str++;
 	if (*str == '-')
-		num = -1;
-	if (*str == '-' || *str == '+')
+		is_neg = -1;
+	if ((*str) == '-' || (*str) == '+')
 		str++;
-	if (!*str)
-		error_exit(stack_a);
-	while (*str >= '0' && *str <= '9')
+	while ((*str) >= '0' && (*str) <= '9')
 	{
-		if (!ft_isdigit(*str))
-			error_exit(stack_a);
-		result = (result * 10) + (*str - '0');
+		results = (results * 10) + ((*str) - '0');
 		str++;
 	}
-	if ((result * num) > 2147483647 || (result * num < -2147483648))
+	if ((results * is_neg) > INT_MAX || (results * is_neg) < INT_MIN)
 		error_exit(stack_a);
-	return (num * result);
-}
-
-int	checks(t_node *stack_a, char *str)
-{
-	if (ft_atol_checker(str, stack_a))
-		return (1);
-	return (0);
+	return (results * is_neg);
 }
