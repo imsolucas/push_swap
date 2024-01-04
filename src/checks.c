@@ -6,11 +6,11 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:37:07 by djin              #+#    #+#             */
-/*   Updated: 2023/08/01 13:49:51 by djin             ###   ########.fr       */
+/*   Updated: 2024/01/04 21:34:58 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	check_space(char c)
 {
@@ -26,17 +26,29 @@ int	check_space(char c)
 	return (0);
 }
 
-void	error_exit(t_node *stack_a)
+void	error(char	*str)
 {
-	clear_lst(stack_a, true);
-	ft_printf("ERROR\n");
+	ft_printf("ERROR: %s\n", str);
 	exit(true);
 }
 
-long	ft_atol_checker(const char *str, t_node *stack_a)
+void	print_stack(t_node *stack_a)
 {
-	int	is_neg;
-	int	results;
+	stack_a = stack_go_back(stack_a, false);
+	while (stack_a)
+	{
+		if (stack_a != NULL)
+		{
+			ft_printf("stack_a: %d\n", stack_a->num);
+			stack_a = stack_a->next;
+		}
+	}
+}
+
+long	ft_atol_checker(const char *str)
+{
+	int		is_neg;
+	long	results;
 
 	is_neg = 1;
 	results = 0;
@@ -51,7 +63,8 @@ long	ft_atol_checker(const char *str, t_node *stack_a)
 		results = (results * 10) + ((*str) - '0');
 		str++;
 	}
-	if ((results * is_neg) > INT_MAX || (results * is_neg) < INT_MIN)
-		error_exit(stack_a);
-	return (results * is_neg);
+	results = results * is_neg;
+	if (results > INT_MAX || results < INT_MAX)
+		error("Too Much Number Master");
+	return (results);
 }

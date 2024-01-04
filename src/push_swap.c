@@ -6,34 +6,31 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:24:12 by djin              #+#    #+#             */
-/*   Updated: 2023/08/01 18:47:27 by djin             ###   ########.fr       */
+/*   Updated: 2024/01/04 21:36:37 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	main(int argc, char **argv)
 {
+	int	i;
 	t_node	*stack_a;
 	t_node	*stack_b;
-	int		i;
 
-	i = 0;
 	stack_a = NULL;
 	stack_b = NULL;
+	i = 0;
+	if (argc == 1)
+		return (0);
 	if (argc == 2)
-		ft_split(argv[1], ' ');
+		argv = ft_split(argv[1], ' ');
 	if (argc == 2)
 		i = -1;
 	if (argc > 1)
 	{
 		while (argv[++i])
-		{
-			if (!ft_atol_checker(argv[i], stack_a))
-				error_exit(stack_a);
-			stack_a = node_join(stack_a, ft_atoi(argv[i]));
-		}
-		print_stack(stack_a, stack_b);
+			stack_a = add_stack(stack_a, ft_atoi(argv[i]));
 	}
-	// ft_printf ("\n");
+	print_stack(stack_a);
 }

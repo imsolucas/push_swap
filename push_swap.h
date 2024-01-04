@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:37:59 by djin              #+#    #+#             */
-/*   Updated: 2023/08/01 12:57:08 by djin             ###   ########.fr       */
+/*   Updated: 2024/01/04 21:06:04 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
-# include "libft/ft_printf/ft_printf.h"
+# include "ft_printf/ft_printf.h"
 
 typedef struct s_node
 {
-	int				content;
+	int				num;
 	struct s_node	*next;
 	struct s_node	*prev;
 }					t_node;
 
 //checks
-long	ft_atol_checker(const char *str, t_node *stack_a);
+long	ft_atol_checker(const char *str);
 void	error_exit(t_node *stack_a);
 int		check_space(char c);
 bool	num_checks(const char *str, t_node *stacks);
 
 //lst_utils
-t_node	*lst_first_last(t_node *node, bool is_last);
-void	clear_lst(t_node *node, bool loop);
-t_node	*new_node(int content);
-t_node	*node_join(t_node *node, int content);
+t_node	*add_stack(t_node *stack, long num);
+t_node	*create_stack(int num);
+t_node	*stack_go_back(t_node *stack, bool is_last);
+void	free_stack(t_node *stack);
 
 //debug
-void	print_stack(t_node *stack_a, t_node *stack_b);
+void	print_stack(t_node *stack_a);
 
 //operation
 bool	push(t_node **from, t_node **to);
