@@ -4,7 +4,7 @@ CC = gcc
 RM = rm -rf
 CFLAGS = -Wall -Werror -Wextra -ggdb -fsanitize=address
 
-SRCS_MAIN = src/checks.c src/push_swap.c src/lst_utils.c
+SRCS_MAIN = src/checks.c src/push_swap.c src/lst_utils.c src/operation.c
 OBJS = $(SRCS_MAIN:.c=.o)
 
 LIBFT_MAKE = make all -C libft

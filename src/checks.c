@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:37:07 by djin              #+#    #+#             */
-/*   Updated: 2024/01/04 21:34:58 by djin             ###   ########.fr       */
+/*   Updated: 2024/01/09 17:07:03 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,30 @@ void	error(char	*str)
 	exit(true);
 }
 
-void	print_stack(t_node *stack_a)
+void	print_stack(t_node *stack_a, t_node *stack_b)
 {
-	stack_a = stack_go_back(stack_a, false);
-	while (stack_a)
-	{
-		if (stack_a != NULL)
-		{
-			ft_printf("stack_a: %d\n", stack_a->num);
-			stack_a = stack_a->next;
-		}
-	}
+	// stack_a = stack_go_back(stack_a, false);
+	(void)stack_a;
+	(void)stack_b;
+	// stack_b = stack_go_back(stack_b, false);
+	// while (true)
+	// {
+	// 	if (stack_a != NULL)
+	// 	{
+	// 		ft_printf("%d ", stack_a->num);
+	// 		stack_a = stack_a->next;
+	// 	}
+	// 	else if (stack_b != NULL)
+	// 	{
+	// 		ft_printf("%d ", stack_b->num);
+	// 		stack_b = stack_b->next;
+	// 	}
+	// 	else
+	// 		break ;
+	// }
+	// printf("%d", (int)stack_b);
+	// printf("%d", stack_a->num);
+	ft_printf("\n");
 }
 
 long	ft_atol_checker(const char *str)

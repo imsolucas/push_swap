@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:37:59 by djin              #+#    #+#             */
-/*   Updated: 2024/01/04 21:06:04 by djin             ###   ########.fr       */
+/*   Updated: 2024/01/09 16:31:39 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 typedef struct s_node
 {
 	int				num;
+	struct s_node	*head;
+	struct s_node	*tail;
 	struct s_node	*next;
 	struct s_node	*prev;
 }					t_node;
@@ -36,10 +38,12 @@ t_node	*stack_go_back(t_node *stack, bool is_last);
 void	free_stack(t_node *stack);
 
 //debug
-void	print_stack(t_node *stack_a);
+void	print_stack(t_node *stack_a, t_node *stack_b);
 
 //operation
-bool	push(t_node **from, t_node **to);
-bool	rotate(t_node **stack, bool reverse);
+void	swap(t_node **stack);
+void	push(t_node **stack_a, t_node **stack_b);
+void	reverse_rotate(t_node **stack);
+void	rotate(t_node **stack);
 
 #endif

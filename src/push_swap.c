@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:24:12 by djin              #+#    #+#             */
-/*   Updated: 2024/01/04 21:36:37 by djin             ###   ########.fr       */
+/*   Updated: 2024/01/09 17:11:47 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@ int	main(int argc, char **argv)
 		while (argv[++i])
 			stack_a = add_stack(stack_a, ft_atoi(argv[i]));
 	}
-	print_stack(stack_a);
+	// swap(&stack_a);
+	push(&stack_a, &stack_b);
+	// print_stack(stack_a, stack_b);
 }
