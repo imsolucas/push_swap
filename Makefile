@@ -3,40 +3,75 @@ NAME = push_swap
 CC = gcc
 RM = rm -rf
 CFLAGS = -Wall -Werror -Wextra -ggdb -fsanitize=address
+INCLUDES = -Iincludes -Ilib/libft -Ilib/ft_printf
 
-SRCS_MAIN = src/checks.c src/push_swap.c src/lst_utils.c src/operation.c
-OBJS = $(SRCS_MAIN:.c=.o)
+# Source files
+SRCS_DIR = srcs
+OPERATION_DIR = operation
+MAIN_DIR = main
+CHECK_DIR = check
+SRCS_FILES = $(addprefix $(MAIN_DIR)/, main.c lst_utils.c) \
+						 $(addprefix $(OPERATION_DIR)/, operation_utils.c operation.c push.c reverse_rotate.c rotate.c swap.c) \
+						 $(addprefix $(CHECK_DIR)/, checks.c) \
 
-LIBFT_MAKE = make all -C libft
-LIBFT_CP = cp libft/libft.a .
+SRCS = $(addprefix $(SRCS_DIR)/,$(SRCS_FILES))
 
-PRINTF_MAKE = make all -C ft_printf
-PRINTF_CP = cp ft_printf/libftprintf.a .
+# Object files
+OBJS_DIR = objs
+OBJS_DIRS = $(OBJS_DIR) $(OBJS_DIR)/$(MAIN_DIR) $(OBJS_DIR)/$(OPERATION_DIR) $(OBJS_DIR)/$(CHECK_DIR)
+OBJS_FILES = $(patsubst %.c,%.o,$(SRCS_FILES))
+OBJS = $(addprefix $(OBJS_DIR)/,$(OBJS_FILES))
 
+# Librairies
+LIBFT_DIR = lib/libft
+LIBFT = $(LIBFT_DIR)/libft.a
+
+PRINTF_DIR = lib/ft_printf
+PRINTF = $(PRINTF_DIR)/libftprintf.a
+
+LIBS = -L$(LIBFT_DIR) -L$(PRINTF_DIR) -lft -lftprintf
+
+# Colors and text formatting
+RESET = \033[0m
+BOLD = \033[1m
+DIM = \033[2m
+UNDERLINE = \033[4m
+BLINK = \033[5m
+INVERT = \033[7m
+LIGHT_BLUE = \033[94m
+YELLOW = \033[93m
+
+# Makefile rules
 all: $(NAME)
 
-%.o: %.c
-	$(CC) -c $(CFLAGS) $< -o ${<:.c=.o}
+$(NAME): $(OBJS) $(LIBFT) $(PRINTF)
+	@$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) $(LIBS) -o $(NAME)
+	@echo "$(BOLD)$(LIGHT_BLUE)$(NAME)$(RESET)$(BOLD) has been created$(RESET)"
 
-$(NAME): $(OBJS)
-	${RM} $(BONUS_OBJS)
-	$(LIBFT_MAKE)
-	$(LIBFT_CP)
-	${PRINTF_MAKE}
-	${PRINTF_CP}
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) libft.a libftprintf.a
+$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
+	@mkdir -p $(OBJS_DIRS)
+	@echo "$(BOLD)$(YELLOW)Compiling $<...$(RESET)"
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(LIBFT):
+	@echo "$(BOLD)$(YELLOW)Compiling libft...$(RESET)"
+	@make -C $(LIBFT_DIR) -s
+
+$(PRINTF):
+	@echo "$(BOLD)$(YELLOW)Compiling ft_printf...$(RESET)"
+	@make -C $(PRINTF_DIR) -s
 
 clean:
-	$(RM) $(OBJS) $(BONUS_OBJS) libft.a libftprintf.a
-	make fclean -C libft
-	make fclean -C ft_printf
+	@echo "$(BOLD)$(LIGHT_BLUE)Cleaning objects files...$(RESET)"
+	@$(RM) $(OBJS_DIR)
+	@make -C $(LIBFT_DIR) clean -s
+	@make -C $(PRINTF_DIR) clean -s
 
-fclean:
-	$(RM) $(NAME)
-	make fclean -C libft
-	make fclean -C ft_printf
-	$(RM) libft.a libftprintf.a
-	make clean
+fclean: clean
+	@echo "$(BOLD)$(LIGHT_BLUE)Cleaning $(NAME)...$(RESET)"
+	@$(RM) $(NAME)
+	@make -C $(LIBFT_DIR) fclean -s
+	@make -C $(PRINTF_DIR) fclean -s
 
 re: fclean all
 

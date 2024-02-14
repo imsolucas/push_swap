@@ -6,11 +6,11 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 12:47:36 by djin              #+#    #+#             */
-/*   Updated: 2024/01/05 14:10:58 by djin             ###   ########.fr       */
+/*   Updated: 2024/02/14 15:42:18 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 t_node	*add_stack(t_node *stack, long num)
 {
@@ -25,20 +25,6 @@ t_node	*add_stack(t_node *stack, long num)
 	new_stack->prev = stack;
 	return (new_stack);
 }
-
-// t_node	*add_stack_front(t_node *stack, long num)
-// {
-// 	t_node	*new_stack;
-
-// 	new_stack = create_stack(num);
-// 	if (!new_stack)
-// 		return (NULL);
-// 	if (!stack)
-// 		return (stack);
-// 	stack->prev = new_stack;
-// 	new_stack->next = stack;
-// 	return (new_stack);
-// }
 
 t_node	*create_stack(int num)
 {
@@ -55,7 +41,6 @@ t_node	*create_stack(int num)
 
 t_node	*stack_go_back(t_node *stack, bool is_last)
 {
-
 	if (is_last == true)
 	{
 		while (stack->next != NULL && stack != NULL)

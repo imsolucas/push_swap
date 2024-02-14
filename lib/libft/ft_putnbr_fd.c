@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 20:20:17 by djin              #+#    #+#             */
-/*   Updated: 2023/05/09 00:49:24 by djin             ###   ########.fr       */
+/*   Updated: 2024/02/14 15:42:30 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static void	ft_print_fd(int fd, char *str)
 	{
 		write(fd, &str[i], 1);
 		i++;
-	}	
+	}
 }
 
 void	ft_putnbr_fd(int n, int fd)

@@ -6,11 +6,11 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:37:07 by djin              #+#    #+#             */
-/*   Updated: 2024/01/09 17:07:03 by djin             ###   ########.fr       */
+/*   Updated: 2024/02/14 15:21:12 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 int	check_space(char c)
 {
@@ -26,6 +26,16 @@ int	check_space(char c)
 	return (0);
 }
 
+void	add_node(t_node **stack, int *i, t_node **head, char **argv)
+{
+	while (argv[++(*i)])
+	{
+		*stack = add_stack(*stack, ft_atoi(argv[*i]));
+		if (*head == NULL)
+			*head = *stack;
+	}
+}
+
 void	error(char	*str)
 {
 	ft_printf("ERROR: %s\n", str);
@@ -34,27 +44,22 @@ void	error(char	*str)
 
 void	print_stack(t_node *stack_a, t_node *stack_b)
 {
-	// stack_a = stack_go_back(stack_a, false);
-	(void)stack_a;
-	(void)stack_b;
-	// stack_b = stack_go_back(stack_b, false);
-	// while (true)
-	// {
-	// 	if (stack_a != NULL)
-	// 	{
-	// 		ft_printf("%d ", stack_a->num);
-	// 		stack_a = stack_a->next;
-	// 	}
-	// 	else if (stack_b != NULL)
-	// 	{
-	// 		ft_printf("%d ", stack_b->num);
-	// 		stack_b = stack_b->next;
-	// 	}
-	// 	else
-	// 		break ;
-	// }
-	// printf("%d", (int)stack_b);
-	// printf("%d", stack_a->num);
+	ft_printf("Stack A: ");
+	while (stack_a)
+	{
+		ft_printf("%d ", stack_a->num);
+		if (stack_a->next == NULL)
+			break ;
+		stack_a = stack_a->next;
+	}
+	ft_printf("\nStack B: ");
+	while (stack_b)
+	{
+		ft_printf("%d ", stack_b->num);
+		if (stack_b->next == NULL)
+			break ;
+		stack_b = stack_b->next;
+	}
 	ft_printf("\n");
 }
 

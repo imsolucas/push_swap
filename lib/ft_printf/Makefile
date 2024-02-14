@@ -16,11 +16,9 @@ $(NAME): $(OBJ)
 
 clean:
 	@rm -f $(OBJ)
-	@echo cleaned objects
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo cleaned all
 
 re: fclean $(NAME)
 
