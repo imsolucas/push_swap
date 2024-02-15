@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:37:59 by djin              #+#    #+#             */
-/*   Updated: 2024/02/14 15:41:18 by djin             ###   ########.fr       */
+/*   Updated: 2024/02/14 21:08:07 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,29 @@
 # include "libft.h"
 # include "ft_printf.h"
 
+typedef struct s_steps
+{
+	int	ra;
+	int	rb;
+	int	rr;
+	int	rra;
+	int	rrb;
+	int	rrr;
+	int	pa;
+	int	pb;
+	int	sa;
+	int	sb;
+}	t_steps;
+
 typedef struct s_node
 {
 	int				num;
+	int				rank;
 	struct s_node	*head;
 	struct s_node	*tail;
 	struct s_node	*next;
 	struct s_node	*prev;
+	t_steps			*steps;
 }					t_node;
 
 //checks
@@ -30,9 +46,10 @@ long	ft_atol_checker(const char *str);
 void	error_exit(t_node *stack_a);
 int		check_space(char c);
 bool	num_checks(const char *str, t_node *stacks);
-void	add_node(t_node **stack, int *i, t_node **head, char **argv);
+void	add_node(t_node **stack, int *i, char **argv);
 
 //lst_utils
+int		lst_count_num(t_node *stack);
 t_node	*add_stack(t_node *stack, long num);
 t_node	*create_stack(int num);
 t_node	*stack_go_back(t_node *stack, bool is_last);
@@ -62,5 +79,13 @@ void	rr(t_node **stack_a, t_node **stack_b);
 void	rra(t_node **stack_a);
 void	rrb(t_node **stack_b);
 void	rrr(t_node **stack_a, t_node **stack_b);
+
+//sorting
+void	sort_two(t_node **stack_a);
+void	sort_three(t_node **stack_a);
+void	sort_four(t_node **stack_a, t_node **stack_b);
+
+//sorting_utils
+void	rank(t_node *stack_a);
 
 #endif

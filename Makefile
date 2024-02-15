@@ -10,7 +10,11 @@ SRCS_DIR = srcs
 OPERATION_DIR = operation
 MAIN_DIR = main
 CHECK_DIR = check
-SRCS_FILES = $(addprefix $(MAIN_DIR)/, main.c lst_utils.c) \
+LINKEDLIST_DIR = linkedlist
+SORTING_DIR = sorting
+SRCS_FILES = $(addprefix $(MAIN_DIR)/, main.c) \
+						 $(addprefix $(SORTING_DIR)/, sorting.c sorting_utils.c) \
+						 $(addprefix $(LINKEDLIST_DIR)/, lst_create.c lst_count_num.c) \
 						 $(addprefix $(OPERATION_DIR)/, operation_utils.c operation.c push.c reverse_rotate.c rotate.c swap.c) \
 						 $(addprefix $(CHECK_DIR)/, checks.c) \
 
@@ -18,7 +22,7 @@ SRCS = $(addprefix $(SRCS_DIR)/,$(SRCS_FILES))
 
 # Object files
 OBJS_DIR = objs
-OBJS_DIRS = $(OBJS_DIR) $(OBJS_DIR)/$(MAIN_DIR) $(OBJS_DIR)/$(OPERATION_DIR) $(OBJS_DIR)/$(CHECK_DIR)
+OBJS_DIRS = $(OBJS_DIR) $(OBJS_DIR)/$(MAIN_DIR) $(OBJS_DIR)/$(OPERATION_DIR) $(OBJS_DIR)/$(CHECK_DIR) $(OBJS_DIR)/$(LINKEDLIST_DIR) $(OBJS_DIR)/$(SORTING_DIR)
 OBJS_FILES = $(patsubst %.c,%.o,$(SRCS_FILES))
 OBJS = $(addprefix $(OBJS_DIR)/,$(OBJS_FILES))
 
@@ -45,6 +49,7 @@ YELLOW = \033[93m
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT) $(PRINTF)
+	@echo "$(BOLD)$(LIGHT_BLUE)Linking objects...$(RESET)"
 	@$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) $(LIBS) -o $(NAME)
 	@echo "$(BOLD)$(LIGHT_BLUE)$(NAME)$(RESET)$(BOLD) has been created$(RESET)"
 

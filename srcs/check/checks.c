@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:37:07 by djin              #+#    #+#             */
-/*   Updated: 2024/02/14 15:21:12 by djin             ###   ########.fr       */
+/*   Updated: 2024/02/14 20:53:23 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,13 @@ int	check_space(char c)
 	return (0);
 }
 
-void	add_node(t_node **stack, int *i, t_node **head, char **argv)
+void	add_node(t_node **stack, int *i, char **argv)
 {
 	while (argv[++(*i)])
-	{
 		*stack = add_stack(*stack, ft_atoi(argv[*i]));
-		if (*head == NULL)
-			*head = *stack;
-	}
+	*stack = stack_go_back(*stack, false);
+	(*stack)->head = *stack;
+	(*stack)->tail = stack_go_back(*stack, true);
 }
 
 void	error(char	*str)

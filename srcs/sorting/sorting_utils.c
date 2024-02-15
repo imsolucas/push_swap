@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sorting_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/14 15:44:51 by djin              #+#    #+#             */
-/*   Updated: 2024/02/14 16:06:32 by djin             ###   ########.fr       */
+/*   Created: 2024/02/14 17:59:10 by djin              #+#    #+#             */
+/*   Updated: 2024/02/14 20:57:15 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	rank(t_node *stack_a)
 {
-	int		i;
-	t_node	*stack_a;
-	t_node	*stack_b;
+	t_node	*current;
+	t_node	*compare;
+	int		rank;
 
-	i = 0;
-	stack_a = NULL;
-	stack_b = NULL;
-	if (argc == 1)
-		return (0);
-	if (argc == 2)
-		argv = ft_split(argv[1], ' ');
-	if (argc == 2)
-		i = -1;
-	if (argc > 1)
-		add_node(&stack_a, &i, argv);
-	push_swap(&stack_a, &stack_b);
-	print_stack(stack_a, stack_b);
+	current = stack_go_back(stack_a, false);
+	while (current)
+	{
+		rank = 1;
+		compare = stack_a->head;
+		while (compare)
+		{
+			if (current->num > compare->num)
+				rank++;
+			compare = compare->next;
+		}
+		current->rank = rank;
+		current = current->next;
+	}
 }
