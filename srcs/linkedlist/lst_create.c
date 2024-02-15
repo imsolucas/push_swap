@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lst_create.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:17:21 by djin              #+#    #+#             */
-/*   Updated: 2024/02/14 16:17:23 by djin             ###   ########.fr       */
+/*   Updated: 2024/02/15 11:30:35 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ t_node	*create_stack(int num)
 	new_node->num = num;
 	new_node->next = NULL;
 	new_node->prev = NULL;
+	new_node->head = NULL;
+	new_node->tail = NULL;
 	return (new_node);
 }
 

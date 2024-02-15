@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:37:07 by djin              #+#    #+#             */
-/*   Updated: 2024/02/14 20:53:23 by djin             ###   ########.fr       */
+/*   Updated: 2024/02/15 11:32:37 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	add_node(t_node **stack, int *i, char **argv)
 	*stack = stack_go_back(*stack, false);
 	(*stack)->head = *stack;
 	(*stack)->tail = stack_go_back(*stack, true);
+	// ft_printf("stack->tail->num: %d\n", (*stack)->tail->num);
 }
 
 void	error(char	*str)
