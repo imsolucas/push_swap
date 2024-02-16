@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:37:59 by djin              #+#    #+#             */
-/*   Updated: 2024/02/14 21:08:07 by djin             ###   ########.fr       */
+/*   Updated: 2024/02/16 06:11:37 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ typedef struct s_node
 	struct s_node	*tail;
 	struct s_node	*next;
 	struct s_node	*prev;
-	t_steps			*steps;
 }					t_node;
 
 //checks
