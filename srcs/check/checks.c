@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:37:07 by djin              #+#    #+#             */
-/*   Updated: 2024/02/15 11:32:37 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/16 07:35:02 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,20 @@ int	check_space(char c)
 	return (0);
 }
 
-void	add_node(t_node **stack, int *i, char **argv)
+// void	add_node(t_node **stack, int *i, char **argv)
+// {
+// 	while (argv[++(*i)])
+// 		*stack = add_stack(*stack, ft_atoi(argv[*i]));
+// 	*stack = stack_go_back(*stack, false);
+// 	(*stack)->head = *stack;
+// 	(*stack)->tail = stack_go_back(*stack, true);
+// 	// ft_printf("stack->tail->num: %d\n", (*stack)->tail->num);
+// }
+
+void	add_stack(t_stack *stack, int *i, char **argv)
 {
 	while (argv[++(*i)])
-		*stack = add_stack(*stack, ft_atoi(argv[*i]));
-	*stack = stack_go_back(*stack, false);
-	(*stack)->head = *stack;
-	(*stack)->tail = stack_go_back(*stack, true);
-	// ft_printf("stack->tail->num: %d\n", (*stack)->tail->num);
+		link_node(stack, create_stack(ft_atoi(argv[*i])));
 }
 
 void	error(char	*str)
@@ -42,23 +48,37 @@ void	error(char	*str)
 	exit(true);
 }
 
-void	print_stack(t_node *stack_a, t_node *stack_b)
+void	print_stack(t_stack *stack_a, t_stack *stack_b)
 {
-	ft_printf("Stack A: ");
-	while (stack_a)
+	t_node	*tmp_a;
+	t_node	*tmp_b;
+
+	tmp_a = NULL;
+	tmp_b = NULL;
+	if (stack_a->head != NULL)
+		tmp_a = stack_a->head;
+	if (stack_b->head != NULL)
+		tmp_b = stack_b->head;
+	ft_printf("stack_a: ");
+	while (tmp_a != NULL)
 	{
-		ft_printf("%d ", stack_a->num);
-		if (stack_a->next == NULL)
+		ft_printf("%d ", tmp_a->num);
+		if (tmp_a->next == NULL)
 			break ;
-		stack_a = stack_a->next;
+		tmp_a = tmp_a->next;
 	}
-	ft_printf("\nStack B: ");
-	while (stack_b)
+	// while (tmp_a)
+	// {
+	// 	ft_printf("%d ", tmp_a->num);
+	// 	if (tmp_a->prev == NULL)
+	// 		break ;
+	// 	tmp_a = tmp_a->prev;
+	// }
+	ft_printf("\nstack_b: ");
+	while (tmp_b != NULL)
 	{
-		ft_printf("%d ", stack_b->num);
-		if (stack_b->next == NULL)
-			break ;
-		stack_b = stack_b->next;
+		ft_printf("%d ", tmp_b->num);
+		tmp_b = tmp_b->next;
 	}
 	ft_printf("\n");
 }

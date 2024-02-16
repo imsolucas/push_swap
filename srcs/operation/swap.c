@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 15:31:45 by djin              #+#    #+#             */
-/*   Updated: 2024/02/14 15:32:02 by djin             ###   ########.fr       */
+/*   Updated: 2024/02/16 08:39:12 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_node **stack_a)
+void	sa(t_stack *stack_a)
 {
 	swap(stack_a);
 }
 
-void	sb(t_node **stack_b)
+void	sb(t_stack *stack_b)
 {
 	swap(stack_b);
 }
 
-void	ss(t_node **stack_a, t_node **stack_b)
+void	ss(t_stack *stack_a, t_stack *stack_b)
 {
 	swap(stack_a);
 	swap(stack_b);

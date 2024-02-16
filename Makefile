@@ -2,7 +2,7 @@
 NAME = push_swap
 CC = gcc
 RM = rm -rf
-CFLAGS = -Wall -Werror -Wextra -ggdb -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra -ggdb -fsanitize=address -w
 INCLUDES = -Iincludes -Ilib/libft -Ilib/ft_printf
 
 # Source files
@@ -13,10 +13,10 @@ CHECK_DIR = check
 LINKEDLIST_DIR = linkedlist
 SORTING_DIR = sorting
 SRCS_FILES = $(addprefix $(MAIN_DIR)/, main.c) \
-						 $(addprefix $(SORTING_DIR)/, sorting.c sorting_utils.c) \
+						 $(addprefix $(CHECK_DIR)/, checks.c) \
 						 $(addprefix $(LINKEDLIST_DIR)/, lst_create.c lst_count_num.c) \
 						 $(addprefix $(OPERATION_DIR)/, operation_utils.c operation.c push.c reverse_rotate.c rotate.c swap.c) \
-						 $(addprefix $(CHECK_DIR)/, checks.c) \
+						 $(addprefix $(SORTING_DIR)/, sorting.c sorting_utils.c) \
 
 SRCS = $(addprefix $(SRCS_DIR)/,$(SRCS_FILES))
 

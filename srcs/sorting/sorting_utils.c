@@ -3,33 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   sorting_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 17:59:10 by djin              #+#    #+#             */
-/*   Updated: 2024/02/14 20:57:15 by djin             ###   ########.fr       */
+/*   Updated: 2024/02/16 08:55:09 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rank(t_node *stack_a)
+void	rank(t_stack *stacks)
 {
-	t_node	*current;
-	t_node	*compare;
+	t_node	*tmp;
 	int		rank;
+	int		i;
 
-	current = stack_go_back(stack_a, false);
-	while (current)
+	tmp = stacks->head;
+	while (tmp)
 	{
 		rank = 1;
-		compare = stack_a->head;
-		while (compare)
+		i = 0;
+		while (stacks->head)
 		{
-			if (current->num > compare->num)
+			if (tmp->num > stacks->head->num)
 				rank++;
-			compare = compare->next;
+			stacks->head = stacks->head->next;
+			i++;
 		}
-		current->rank = rank;
-		current = current->next;
+		tmp->rank = rank;
+		stacks->head = tmp;
+		tmp = tmp->next;
 	}
 }

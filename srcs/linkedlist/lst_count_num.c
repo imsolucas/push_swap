@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lst_count_num.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:23:29 by djin              #+#    #+#             */
-/*   Updated: 2024/02/14 16:27:26 by djin             ###   ########.fr       */
+/*   Updated: 2024/02/16 08:54:03 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	lst_count_num(t_node *stack)
 	t_node	*tmp;
 
 	count = 0;
-	tmp = stack_go_back(stack, false);
 	while (tmp)
 	{
 		count++;
