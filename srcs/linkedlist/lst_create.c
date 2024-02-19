@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   lst_create.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:17:21 by djin              #+#    #+#             */
-/*   Updated: 2024/02/16 08:01:10 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/19 17:07:07 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void 	link_node(t_stack *stack, t_node *new_node)
+void	link_node(t_stack *stack, t_node *new_node)
 {
 	if (stack->head == NULL)
 	{
@@ -50,5 +50,4 @@ void	free_stack(t_stack *stack)
 		stack->head = stack->head->next;
 		free(tmp);
 	}
-	// free(stack);
 }

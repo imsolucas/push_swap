@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:38:07 by djin              #+#    #+#             */
-/*   Updated: 2024/02/19 08:52:26 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/19 17:07:55 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,4 @@ void	sort_big(t_stack *stack_a, t_stack *stack_b)
 {
 	pb(stack_a, stack_b);
 	pb(stack_a, stack_b);
-	
 }

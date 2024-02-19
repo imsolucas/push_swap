@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operation_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 14:48:41 by djin              #+#    #+#             */
-/*   Updated: 2024/02/16 08:26:18 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/19 17:07:17 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	swap(t_stack *stack)
 
 void	push(t_stack *stack_from, t_stack *stack_to)
 {
-	t_node *current;
+	t_node	*current;
 
 	if (stack_from->head == NULL)
 		return ;
@@ -49,7 +49,7 @@ void	push(t_stack *stack_from, t_stack *stack_to)
 	{
 		current->next = stack_to->head;
 		stack_to->head->prev = current;
-		stack_to->head = current;	
+		stack_to->head = current;
 	}
 }
 

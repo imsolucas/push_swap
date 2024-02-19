@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:37:59 by djin              #+#    #+#             */
-/*   Updated: 2024/02/19 08:26:52 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/19 17:07:46 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	add_stack(t_stack *stack, int *i, char **argv);
 
 //lst_utils
 int		lst_count_num(t_stack *stacks);
-void 	link_node(t_stack *stack, t_node *new_node);
+void	link_node(t_stack *stack, t_node *new_node);
 t_node	*create_stack(int num);
 void	free_stack(t_stack *stack);
 

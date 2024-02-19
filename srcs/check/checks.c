@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:37:07 by djin              #+#    #+#             */
-/*   Updated: 2024/02/16 07:35:02 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/19 17:05:52 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,6 @@ void	print_stack(t_stack *stack_a, t_stack *stack_b)
 			break ;
 		tmp_a = tmp_a->next;
 	}
-	// while (tmp_a)
-	// {
-	// 	ft_printf("%d ", tmp_a->num);
-	// 	if (tmp_a->prev == NULL)
-	// 		break ;
-	// 	tmp_a = tmp_a->prev;
-	// }
 	ft_printf("\nstack_b: ");
 	while (tmp_b != NULL)
 	{
