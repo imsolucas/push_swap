@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 17:59:10 by djin              #+#    #+#             */
-/*   Updated: 2024/02/16 08:55:09 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/19 07:23:54 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,22 @@
 
 void	rank(t_stack *stacks)
 {
-	t_node	*tmp;
+	t_node	*current;
+	t_node	*compare;
 	int		rank;
-	int		i;
 
-	tmp = stacks->head;
-	while (tmp)
+	current = stacks->head;
+	while (current)
 	{
 		rank = 1;
-		i = 0;
-		while (stacks->head)
+		compare = stacks->head;
+		while (compare)
 		{
-			if (tmp->num > stacks->head->num)
+			if (current->num > compare->num)
 				rank++;
-			stacks->head = stacks->head->next;
-			i++;
+			compare = compare->next;
 		}
-		tmp->rank = rank;
-		stacks->head = tmp;
-		tmp = tmp->next;
+		current->rank = rank;
+		current = current->next;
 	}
 }

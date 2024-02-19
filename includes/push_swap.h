@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:37:59 by djin              #+#    #+#             */
-/*   Updated: 2024/02/16 08:55:18 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/19 08:26:52 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ bool	num_checks(const char *str, t_node *stacks);
 void	add_stack(t_stack *stack, int *i, char **argv);
 
 //lst_utils
-int		lst_count_num(t_node *stack);
+int		lst_count_num(t_stack *stacks);
 void 	link_node(t_stack *stack, t_node *new_node);
 t_node	*create_stack(int num);
 void	free_stack(t_stack *stack);
@@ -61,7 +61,7 @@ void	free_stack(t_stack *stack);
 void	print_stack(t_stack *stack_a, t_stack *stack_b);
 
 //operation
-void	push_swap(t_node **stack_a, t_node **stack_b);
+void	push_swap(t_stack *stack_a, t_stack *stack_b);
 
 //operation_utils
 void	swap(t_stack *stack);
@@ -85,9 +85,10 @@ void	rrr(t_node *stack_a, t_node *stack_b);
 //sorting
 void	sort_two(t_stack *stack);
 void	sort_three(t_stack *stack);
-void	sort_four(t_node **stack_a, t_node **stack_b);
+void	sort_four(t_stack *stack_a, t_stack *stack_b);
+void	sort_five(t_stack *stack_a, t_stack *stack_b);
 
 //sorting_utils
-void	rank(t_node *stack_a);
+void	rank(t_stack *stacks);
 
 #endif
