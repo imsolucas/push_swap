@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:37:07 by djin              #+#    #+#             */
-/*   Updated: 2024/02/19 17:05:52 by djin             ###   ########.fr       */
+/*   Updated: 2024/02/20 14:07:26 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,33 +48,6 @@ void	error(char	*str)
 	exit(true);
 }
 
-void	print_stack(t_stack *stack_a, t_stack *stack_b)
-{
-	t_node	*tmp_a;
-	t_node	*tmp_b;
-
-	tmp_a = NULL;
-	tmp_b = NULL;
-	if (stack_a->head != NULL)
-		tmp_a = stack_a->head;
-	if (stack_b->head != NULL)
-		tmp_b = stack_b->head;
-	ft_printf("stack_a: ");
-	while (tmp_a != NULL)
-	{
-		ft_printf("%d ", tmp_a->num);
-		if (tmp_a->next == NULL)
-			break ;
-		tmp_a = tmp_a->next;
-	}
-	ft_printf("\nstack_b: ");
-	while (tmp_b != NULL)
-	{
-		ft_printf("%d ", tmp_b->num);
-		tmp_b = tmp_b->next;
-	}
-	ft_printf("\n");
-}
 
 long	ft_atol_checker(const char *str)
 {
@@ -99,3 +72,44 @@ long	ft_atol_checker(const char *str)
 		error("Too Much Number Master");
 	return (results);
 }
+
+void	print_stack(t_stack *stack_a, t_stack *stack_b)
+{
+	t_node	*tmp_a;
+	t_node	*tmp_b;
+
+	tmp_a = NULL;
+	tmp_b = NULL;
+	if (stack_a->head != NULL)
+		tmp_a = stack_a->head;
+	if (stack_b->head != NULL)
+		tmp_b = stack_b->head;
+	ft_printf("stack_a: ");
+	while (tmp_a != NULL)
+	{
+		ft_printf("%d ", tmp_a->num);
+		if (tmp_a->next == NULL)
+			break ;
+		ft_printf("-> ");
+		tmp_a = tmp_a->next;
+	}
+	ft_printf("\nstack_b: ");
+	while (tmp_b != NULL)
+	{
+		ft_printf("%d ", tmp_b->num);
+		if (tmp_b->next == NULL)
+			break ;
+		ft_printf("-> ");
+		tmp_b = tmp_b->next;
+	}
+	ft_printf("\n");
+}
+	// tmp_a = stack_a->head;
+	// ft_printf("\nindex: ");
+	// while (tmp_a)
+	// {
+	// 	ft_printf("%d, ", tmp_a->index);
+	// 	if (tmp_a->next == NULL)
+	// 		break ;
+	// 	tmp_a = tmp_a->next;
+	// }\

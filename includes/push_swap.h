@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:37:59 by djin              #+#    #+#             */
-/*   Updated: 2024/02/19 17:07:46 by djin             ###   ########.fr       */
+/*   Updated: 2024/02/20 13:44:24 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,10 @@ typedef struct s_node
 {
 	int				num;
 	int				rank;
+	int				index;
 	struct s_node	*next;
-	struct s_node	*prev;	
+	struct s_node	*prev;
+	t_steps			steps;
 }	t_node;
 
 typedef struct s_stack
@@ -90,5 +92,7 @@ void	sort_five(t_stack *stack_a, t_stack *stack_b);
 
 //sorting_utils
 void	rank(t_stack *stacks);
-
+void	add_index_to_stack(t_stack *stack);
+void	count_steps_to_top(t_stack *stack_a, bool is_a);
+void	set_every_step_to_zero(t_stack *stack);
 #endif
