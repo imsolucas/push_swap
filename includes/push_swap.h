@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:37:59 by djin              #+#    #+#             */
-/*   Updated: 2024/02/20 13:44:24 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/21 10:35:02 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,13 @@ typedef struct s_steps
 	int	sb;
 }	t_steps;
 
+typedef struct s_size
+{
+	int size;
+	int half_of_size;
+	int index;
+}	t_size;
+
 typedef struct s_node
 {
 	int				num;
@@ -52,6 +59,12 @@ void	error_exit(t_node *stack_a);
 int		check_space(char c);
 bool	num_checks(const char *str, t_node *stacks);
 void	add_stack(t_stack *stack, int *i, char **argv);
+
+//check_numbers
+int		min_number(t_stack *stack);
+int		max_number(t_stack *stack);
+int		total_steps(t_node *current_a);
+int		min_steps(int *steps);
 
 //lst_utils
 int		lst_count_num(t_stack *stacks);
@@ -93,6 +106,24 @@ void	sort_five(t_stack *stack_a, t_stack *stack_b);
 //sorting_utils
 void	rank(t_stack *stacks);
 void	add_index_to_stack(t_stack *stack);
-void	count_steps_to_top(t_stack *stack_a, bool is_a);
 void	set_every_step_to_zero(t_stack *stack);
+void	steps_to_handle_min_max(t_stack *stack_a, t_stack *stack_b);
+
+//sorting_utils2
+void	sort_in_between(t_node *current_a, t_stack *stack_b);
+
+//run_steps_utils
+void	set_rr_rrr(t_stack *stack_a);
+void	run_steps(t_node *current, t_stack *stack_a, t_stack *stack_b);
+
+//count_steps
+void	count_steps_to_top_a(t_stack *stack_a);
+void	count_steps_to_top_b(t_stack *stack_b, t_node *current_a);
+void	set_up_count_rotations(t_stack *stack_a, t_stack *stack_b);
+void	count_b_steps(t_node *current_a, t_stack *stack_b, t_node *current_b);
+
+//sort_big
+void	lets_sort_decending(t_stack *stack_a, t_stack *stack_b);
+void	empty_stack_b(t_stack *stack_a, t_stack *stack_b);
+
 #endif

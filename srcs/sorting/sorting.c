@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:38:07 by djin              #+#    #+#             */
-/*   Updated: 2024/02/20 14:09:38 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/21 10:15:27 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,6 @@ void	sort_big(t_stack *stack_a, t_stack *stack_b)
 {
 	pb(stack_a, stack_b);
 	pb(stack_a, stack_b);
-	// count_steps_to_top(stack_a, true);
-	// count_steps_to_top(stack_b, false);
+	lets_sort_decending(stack_a, stack_b);
+	empty_stack_b(stack_a, stack_b);
 }

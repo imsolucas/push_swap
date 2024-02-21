@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 17:59:10 by djin              #+#    #+#             */
-/*   Updated: 2024/02/20 13:45:00 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/21 10:20:54 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,29 +60,33 @@ void	set_every_step_to_zero(t_stack *stack)
 	}
 }
 
-void	count_steps_to_top(t_stack *stack, bool is_a)
+void	steps_to_handle_min_max(t_stack *stack_a, t_stack *stack_b)
 {
-	t_node	*current;
-	int		size;
+	t_node	*current_a;
+	int		min_b;
+	int		max_b;
 
-	size = lst_count_num(stack);
-	current = stack->head;
-	set_every_step_to_zero(stack);
-	while (current)
+	add_index_to_stack(stack_b);
+	min_b = min_number(stack_b);
+	max_b = max_number(stack_b);
+	current_a = stack_a->head;
+	while (current_a)
 	{
-		if (is_a)
-		{
-			if (current->index > size / 2)
-				current->steps.rra += (size - current->index);
-			else
-				current->steps.ra += (current->index);
-		}
-		else
-		{
-			if (current->index > size / 2)
-				current->steps.rrb += (size - current->index);
-			else
-				current->steps.rb += (current->index);
-		}
+		if (current_a->num < min_b || current_a->num > max_b)
+			count_steps_to_top_b(stack_b, current_a);
+		current_a = current_a->next;
+	}
+}
+
+void	steps_to_handle_num_between(t_stack *stack_a, t_stack *stack_b)
+{
+	t_node	*current_a;
+
+	add_index_to_stack(stack_b);
+	current_a = stack_a->head;
+	while (current_a)
+	{
+		sort_in_between(current_a, stack_b);
+		current_a = current_a->next;
 	}
 }
