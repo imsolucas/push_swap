@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 03:34:10 by codespace         #+#    #+#             */
-/*   Updated: 2024/02/21 10:34:45 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/23 06:44:18 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,27 +44,47 @@ int	max_number(t_stack *stack)
 	return (max_num);
 }
 
-int	min_steps(int *steps)
+int	min_steps_index(int *steps, t_size *sort)
 {
-	int	min;
-	int	i;
+	int		min;
+	int		index;
+	int		i;
 
+	// printf("steps[1]: %d\n", steps[1]);
+	min = steps[0];
+	index = 0;
 	i = 0;
-	min = steps[i];
-	while (steps[i])
+	while (i < sort->size)
 	{
 		if (min > steps[i])
+		{
 			min = steps[i];
+			index = i;
+		}
 		i++;
 	}
-	i = 0;
-	while (steps[i])
+	return (index);
+}
+
+int	max_number_index(t_stack *stack)
+{
+	int		max_num;
+	int		index;
+	t_node	*current;
+
+	max_num = stack->head->num;
+	index = 0;
+	current = stack->head;
+	while (current)
 	{
-		if (min == steps[i])
-			break ;
-		i++;
+		if (max_num < current->num)
+		{
+			max_num = current->num;
+			index = current->index;
+		}
+		current = current->next;
 	}
-	return (i);
+	return (index);
 }
 
 int	total_steps(t_node *current_a)

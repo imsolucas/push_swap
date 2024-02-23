@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:37:59 by djin              #+#    #+#             */
-/*   Updated: 2024/02/21 10:35:02 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/23 06:47:29 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ void	add_stack(t_stack *stack, int *i, char **argv);
 int		min_number(t_stack *stack);
 int		max_number(t_stack *stack);
 int		total_steps(t_node *current_a);
-int		min_steps(int *steps);
+int		min_steps_index(int *steps, t_size *sort);
+int		max_number_index(t_stack *stack);
 
 //lst_utils
 int		lst_count_num(t_stack *stacks);
@@ -106,6 +107,7 @@ void	sort_five(t_stack *stack_a, t_stack *stack_b);
 //sorting_utils
 void	rank(t_stack *stacks);
 void	add_index_to_stack(t_stack *stack);
+void	steps_to_handle_num_between(t_stack *stack_a, t_stack *stack_b);
 void	set_every_step_to_zero(t_stack *stack);
 void	steps_to_handle_min_max(t_stack *stack_a, t_stack *stack_b);
 
@@ -125,5 +127,8 @@ void	count_b_steps(t_node *current_a, t_stack *stack_b, t_node *current_b);
 //sort_big
 void	lets_sort_decending(t_stack *stack_a, t_stack *stack_b);
 void	empty_stack_b(t_stack *stack_a, t_stack *stack_b);
+
+//sort_decending
+void	sort_decending(t_stack *stack_b);
 
 #endif

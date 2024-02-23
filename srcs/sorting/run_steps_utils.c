@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 02:19:17 by codespace         #+#    #+#             */
-/*   Updated: 2024/02/21 09:07:56 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/23 06:10:02 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	set_rr_rrr(t_stack *stack_a)
 			current->steps.rrb--;
 			current->steps.rrr++;
 		}
+		current = current->next;
 	}
 }
 
@@ -49,3 +50,4 @@ void	run_steps(t_node *current, t_stack *stack_a, t_stack *stack_b)
 	while (current->steps.rrr--)
 		rrr(stack_a, stack_b);
 }
+

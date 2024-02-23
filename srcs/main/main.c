@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 15:44:51 by djin              #+#    #+#             */
-/*   Updated: 2024/02/20 14:05:10 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/23 06:59:07 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 		add_stack(&stack_a, &i, argv);
 	push_swap(&stack_a, &stack_b);
-	print_stack(&stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	if (argc == 2)
