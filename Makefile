@@ -16,7 +16,7 @@ SRCS_FILES = $(addprefix $(MAIN_DIR)/, main.c) \
 						 $(addprefix $(CHECK_DIR)/, checks.c check_numbers.c) \
 						 $(addprefix $(LINKEDLIST_DIR)/, lst_create.c lst_count_num.c) \
 						 $(addprefix $(OPERATION_DIR)/, operation_utils.c operation.c push.c reverse_rotate.c rotate.c swap.c) \
-						 $(addprefix $(SORTING_DIR)/, count_steps.c run_steps_utils.c sort_big.c sort_decending.c sorting_utils.c sorting_utils2.c sorting.c) \
+						 $(addprefix $(SORTING_DIR)/, count_steps.c run_steps_utils.c sort_big_utils.c sort_big.c sort_decending.c sorting_utils.c sorting_utils2.c sorting.c) \
 
 SRCS = $(addprefix $(SRCS_DIR)/,$(SRCS_FILES))
 

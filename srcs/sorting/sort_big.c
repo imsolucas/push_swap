@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:55:33 by codespace         #+#    #+#             */
-/*   Updated: 2024/02/23 06:49:00 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/24 12:26:43 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,7 @@ void	lets_sort_decending(t_stack *stack_a, t_stack *stack_b)
 			steps[i++] = total_steps(current_a);
 			current_a = current_a->next;
 		}
-		current_a = stack_a->head;
-		while (current_a)
-		{
-			if (current_a->index == min_steps_index(steps, sort))
-			{
-				run_steps(current_a, stack_a, stack_b);
-				pb(stack_a, stack_b);
-				current_a = stack_a->head;
-				break;
-			}
-			current_a = current_a->next;
-		}
+		sorting(stack_a, stack_b, steps, sort);
 		sort->size--;
 		free(steps);
 	}

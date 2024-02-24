@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:37:59 by djin              #+#    #+#             */
-/*   Updated: 2024/02/23 06:47:29 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/24 12:25:55 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,5 +130,8 @@ void	empty_stack_b(t_stack *stack_a, t_stack *stack_b);
 
 //sort_decending
 void	sort_decending(t_stack *stack_b);
+
+//sort_big_utils
+void	sorting(t_stack *stack_a, t_stack *stack_b, int *steps, t_size *sort);
 
 #endif
