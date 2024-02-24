@@ -42,41 +42,54 @@ DIM = \033[2m
 UNDERLINE = \033[4m
 BLINK = \033[5m
 INVERT = \033[7m
-LIGHT_BLUE = \033[94m
+CYAN = \033[36m
 YELLOW = \033[93m
+MAGENTA = \033[35m
+GREEN = \033[92m
+PURPLE = \033[91m
+LMAGENTA = \033[95m
 
 # Makefile rules
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT) $(PRINTF)
-	@echo "$(BOLD)$(LIGHT_BLUE)Linking objects...$(RESET)"
+	@echo "$(BOLD)$(LMAGENTA)Linking objects...$(RESET)"
 	@$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) $(LIBS) -o $(NAME)
-	@echo "$(BOLD)$(LIGHT_BLUE)$(NAME)$(RESET)$(BOLD) has been created$(RESET)"
+	@echo "$(BOLD)$(LMAGENTA)$(NAME)$(RESET)$(BOLD) has been created$(RESET)"
+	@echo " /\_/\ "
+	@echo "( o.o )"
+	@echo " > ^ <"
+	@echo "$(MAGENTA)created by: $(BOLD)$(YELLOW)Lucas$(RESET)"
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 	@mkdir -p $(OBJS_DIRS)
-	@echo "$(BOLD)$(YELLOW)Compiling $<...$(RESET)"
+	@echo "$(BOLD)$(MAGENTA)Compiling $<...$(RESET)"
 	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(LIBFT):
-	@echo "$(BOLD)$(YELLOW)Compiling libft...$(RESET)"
+	@echo "$(BOLD)$(GREEN)Compiling libft...$(RESET)"
 	@make -C $(LIBFT_DIR) -s
 
 $(PRINTF):
-	@echo "$(BOLD)$(YELLOW)Compiling ft_printf...$(RESET)"
+	@echo "$(BOLD)$(PURPLE)Compiling ft_printf...$(RESET)"
 	@make -C $(PRINTF_DIR) -s
 
 clean:
-	@echo "$(BOLD)$(LIGHT_BLUE)Cleaning objects files...$(RESET)"
+	@echo "$(BOLD)$(CYAN)Cleaning objects files...$(RESET)"
 	@$(RM) $(OBJS_DIR)
 	@make -C $(LIBFT_DIR) clean -s
 	@make -C $(PRINTF_DIR) clean -s
 
 fclean: clean
-	@echo "$(BOLD)$(LIGHT_BLUE)Cleaning $(NAME)...$(RESET)"
+	@echo "$(BOLD)$(CYAN)Cleaning $(NAME)...$(RESET)"
 	@$(RM) $(NAME)
 	@make -C $(LIBFT_DIR) fclean -s
 	@make -C $(PRINTF_DIR) fclean -s
+	@echo "$(BOLD)$(CYAN)Cleaning $(NAME) done$(RESET)"
+	@echo " /\_/\ "
+	@echo "( o.o )"
+	@echo " > ^ <"
+	@echo "$(MAGENTA)Thanks for using$(RESET)"
 
 re: fclean all
 

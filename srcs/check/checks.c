@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:37:07 by djin              #+#    #+#             */
-/*   Updated: 2024/02/20 14:07:26 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/24 20:36:21 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,6 @@ int	check_space(char c)
 	return (0);
 }
 
-// void	add_node(t_node **stack, int *i, char **argv)
-// {
-// 	while (argv[++(*i)])
-// 		*stack = add_stack(*stack, ft_atoi(argv[*i]));
-// 	*stack = stack_go_back(*stack, false);
-// 	(*stack)->head = *stack;
-// 	(*stack)->tail = stack_go_back(*stack, true);
-// 	// ft_printf("stack->tail->num: %d\n", (*stack)->tail->num);
-// }
-
 void	add_stack(t_stack *stack, int *i, char **argv)
 {
 	while (argv[++(*i)])
@@ -47,7 +37,6 @@ void	error(char	*str)
 	ft_printf("ERROR: %s\n", str);
 	exit(true);
 }
-
 
 long	ft_atol_checker(const char *str)
 {
@@ -73,17 +62,12 @@ long	ft_atol_checker(const char *str)
 	return (results);
 }
 
-void	print_stack(t_stack *stack_a, t_stack *stack_b)
+void	print_stack(t_stack *a, t_stack *b, t_node *tmp_a, t_node *tmp_b)
 {
-	t_node	*tmp_a;
-	t_node	*tmp_b;
-
-	tmp_a = NULL;
-	tmp_b = NULL;
-	if (stack_a->head != NULL)
-		tmp_a = stack_a->head;
-	if (stack_b->head != NULL)
-		tmp_b = stack_b->head;
+	if (a->head != NULL)
+		tmp_a = a->head;
+	if (b->head != NULL)
+		tmp_b = b->head;
 	ft_printf("stack_a: ");
 	while (tmp_a != NULL)
 	{
@@ -104,7 +88,7 @@ void	print_stack(t_stack *stack_a, t_stack *stack_b)
 	}
 	ft_printf("\n");
 }
-	// tmp_a = stack_a->head;
+	// tmp_a = a->head;
 	// ft_printf("\nindex: ");
 	// while (tmp_a)
 	// {

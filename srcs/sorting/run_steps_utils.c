@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   run_steps_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 02:19:17 by codespace         #+#    #+#             */
-/*   Updated: 2024/02/23 06:10:02 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/24 20:31:44 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,3 @@ void	run_steps(t_node *current, t_stack *stack_a, t_stack *stack_b)
 	while (current->steps.rrr--)
 		rrr(stack_a, stack_b);
 }
-

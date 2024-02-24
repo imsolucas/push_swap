@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   count_steps.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 03:20:39 by codespace         #+#    #+#             */
-/*   Updated: 2024/02/23 06:18:59 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/24 20:31:24 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	count_steps_to_top_b(t_stack *stack_b, t_node *current_a)
 				current_a->steps.rb += (current_b->index);
 		}
 		current_b = current_b->next;
-	}	
+	}
 }
 
 void	set_up_count_rotations(t_stack *stack_a, t_stack *stack_b)

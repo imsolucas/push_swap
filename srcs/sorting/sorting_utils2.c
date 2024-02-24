@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting_utils2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:16:49 by codespace         #+#    #+#             */
-/*   Updated: 2024/02/23 06:25:23 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/24 20:30:53 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	sort_in_between(t_node *current_a, t_stack *stack_b)
 	num_a = current_a->num;
 	num_b = current_b->num;
 	if (num_a > num_b && num_a < stack_b->tail->num)
-		return;
+		return ;
 	while (current_b->next)
 	{
 		next_num_b = current_b->next->num;
@@ -33,5 +33,3 @@ void	sort_in_between(t_node *current_a, t_stack *stack_b)
 		num_b = current_b->num;
 	}
 }
-
- 

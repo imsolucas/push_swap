@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_numbers.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 03:34:10 by codespace         #+#    #+#             */
-/*   Updated: 2024/02/23 06:44:18 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/24 20:36:57 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ int	min_steps_index(int *steps, t_size *sort)
 	int		index;
 	int		i;
 
-	// printf("steps[1]: %d\n", steps[1]);
 	min = steps[0];
 	index = 0;
 	i = 0;

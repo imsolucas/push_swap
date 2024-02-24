@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_big_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 12:18:08 by codespace         #+#    #+#             */
-/*   Updated: 2024/02/24 12:24:12 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/24 20:31:15 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	sorting(t_stack *stack_a, t_stack *stack_b, int *steps, t_size *sort)
 			run_steps(current_a, stack_a, stack_b);
 			pb(stack_a, stack_b);
 			current_a = stack_a->head;
-			break;
+			break ;
 		}
 		current_a = current_a->next;
 	}

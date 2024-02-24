@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:37:59 by djin              #+#    #+#             */
-/*   Updated: 2024/02/24 12:25:55 by codespace        ###   ########.fr       */
+/*   Updated: 2024/02/24 20:34:50 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ typedef struct s_steps
 
 typedef struct s_size
 {
-	int size;
-	int half_of_size;
-	int index;
+	int	size;
+	int	half_of_size;
+	int	index;
 }	t_size;
 
 typedef struct s_node
@@ -59,6 +59,7 @@ void	error_exit(t_node *stack_a);
 int		check_space(char c);
 bool	num_checks(const char *str, t_node *stacks);
 void	add_stack(t_stack *stack, int *i, char **argv);
+void	print_stack(t_stack *a, t_stack *b, t_node *tmp_a, t_node *tmp_b);
 
 //check_numbers
 int		min_number(t_stack *stack);
@@ -72,9 +73,6 @@ int		lst_count_num(t_stack *stacks);
 void	link_node(t_stack *stack, t_node *new_node);
 t_node	*create_stack(int num);
 void	free_stack(t_stack *stack);
-
-//debug
-void	print_stack(t_stack *stack_a, t_stack *stack_b);
 
 //operation
 void	push_swap(t_stack *stack_a, t_stack *stack_b);
