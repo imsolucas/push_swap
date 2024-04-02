@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_decending.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 06:41:43 by codespace         #+#    #+#             */
-/*   Updated: 2024/02/24 20:36:45 by djin             ###   ########.fr       */
+/*   Updated: 2024/04/01 16:19:03 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	sort_decending(t_stack *stack_b)
 	while (current_b->num != max_b)
 	{
 		if (max_b > (size_b / 2))
-			rrb(stack_b);
+			rrb(stack_b, true);
 		else
-			rb(stack_b);
+			rb(stack_b, true);
 		current_b = stack_b->head;
 	}
 }

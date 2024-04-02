@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   run_steps_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 02:19:17 by codespace         #+#    #+#             */
-/*   Updated: 2024/02/24 20:31:44 by djin             ###   ########.fr       */
+/*   Updated: 2024/04/01 16:18:34 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,15 @@ void	set_rr_rrr(t_stack *stack_a)
 void	run_steps(t_node *current, t_stack *stack_a, t_stack *stack_b)
 {
 	while (current->steps.ra--)
-		ra(stack_a);
+		ra(stack_a, true);
 	while (current->steps.rb--)
-		rb(stack_b);
+		rb(stack_b, true);
 	while (current->steps.rra--)
-		rra(stack_a);
+		rra(stack_a, true);
 	while (current->steps.rrb--)
-		rrb(stack_b);
+		rrb(stack_b, true);
 	while (current->steps.rr--)
-		rr(stack_a, stack_b);
+		rr(stack_a, stack_b, true);
 	while (current->steps.rrr--)
-		rrr(stack_a, stack_b);
+		rrr(stack_a, stack_b, true);
 }

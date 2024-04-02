@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_big.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:55:33 by codespace         #+#    #+#             */
-/*   Updated: 2024/02/24 12:26:43 by codespace        ###   ########.fr       */
+/*   Updated: 2024/04/01 16:19:30 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	empty_stack_b(t_stack *stack_a, t_stack *stack_b)
 	while (size_b--)
 	{
 		if (stack_b->head->num < stack_b->tail->num)
-			rrb(stack_b);
-		pa(stack_a, stack_b);
+			rrb(stack_b, true);
+		pa(stack_a, stack_b, true);
 	}
 }

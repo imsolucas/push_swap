@@ -13,6 +13,7 @@ CHECK_DIR = check
 LINKEDLIST_DIR = linkedlist
 SORTING_DIR = sorting
 CHECKER_DIR = checker
+GNL_DIR = GetNextLine
 SRCS_FILES = $(addprefix $(MAIN_DIR)/, main.c) \
 						 $(addprefix $(CHECK_DIR)/, checks.c check_numbers.c) \
 						 $(addprefix $(LINKEDLIST_DIR)/, lst_create.c lst_count_num.c) \
@@ -21,7 +22,8 @@ SRCS_FILES = $(addprefix $(MAIN_DIR)/, main.c) \
 
 SRCS = $(addprefix $(SRCS_DIR)/,$(SRCS_FILES))
 
-SRCS_FILES_BONUS = $(addprefix $(CHECKER_DIR)/, checker.c) \
+SRCS_FILES_BONUS = $(addprefix $(CHECKER_DIR)/, checker.c checker_utils.c) \
+								$(addprefix $(GNL_DIR)/, get_next_line.c) \
 								$(addprefix $(CHECK_DIR)/, checks.c check_numbers.c) \
 								$(addprefix $(OPERATION_DIR)/, operation_utils.c operation.c push.c reverse_rotate.c rotate.c swap.c) \
 								$(addprefix $(LINKEDLIST_DIR)/, lst_create.c lst_count_num.c) \
@@ -37,7 +39,7 @@ OBJS = $(addprefix $(OBJS_DIR)/,$(OBJS_FILES))
 
 # Bonus object files
 OBJS_DIR_BONUS = objs_bonus
-OBJS_DIRS_BONUS = $(OBJS_DIR_BONUS) $(OBJS_DIR_BONUS)/$(CHECKER_DIR) $(OBJS_DIR_BONUS)/$(OPERATION_DIR) $(OBJS_DIR_BONUS)/$(CHECK_DIR) $(OBJS_DIR_BONUS)/$(LINKEDLIST_DIR) $(OBJS_DIR_BONUS)/$(SORTING_DIR)
+OBJS_DIRS_BONUS = $(OBJS_DIR_BONUS) $(OBJS_DIR_BONUS)/$(CHECKER_DIR) $(OBJS_DIR_BONUS)/$(OPERATION_DIR) $(OBJS_DIR_BONUS)/$(CHECK_DIR) $(OBJS_DIR_BONUS)/$(LINKEDLIST_DIR) $(OBJS_DIR_BONUS)/$(SORTING_DIR) $(OBJS_DIR_BONUS)/$(GNL_DIR)
 OBJS_FILES_BONUS = $(patsubst %.c,%.o,$(SRCS_FILES_BONUS))
 OBJS_BONUS = $(addprefix $(OBJS_DIR_BONUS)/,$(OBJS_FILES_BONUS))
 
@@ -83,7 +85,7 @@ $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 
 bonus: $(OBJS_BONUS) $(LIBFT) $(PRINTF)
 	@echo "$(BOLD)$(LMAGENTA)Linking objects...$(RESET)"
-	@$(CC) $(CFLAGS) $(INCLUDES) $(OBJS_BONUS) $(LIBS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(INCLUDES) $(OBJS_BONUS) $(LIBS) -o checker
 	@echo "$(BOLD)$(LMAGENTA)$(NAME)$(RESET)$(BOLD) has been created$(RESET)"
 	@echo " /\_/\ "
 	@echo "( o.o )"
@@ -111,7 +113,7 @@ clean:
 
 fclean: clean
 	@echo "$(BOLD)$(CYAN)Cleaning $(NAME)...$(RESET)"
-	@$(RM) $(NAME)
+	@$(RM) $(NAME) checker
 	@make -C $(LIBFT_DIR) fclean -s
 	@make -C $(PRINTF_DIR) fclean -s
 	@echo "$(BOLD)$(CYAN)Cleaning $(NAME) done$(RESET)"

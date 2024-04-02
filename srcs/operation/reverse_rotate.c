@@ -3,30 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 15:31:16 by djin              #+#    #+#             */
-/*   Updated: 2024/02/23 06:52:00 by codespace        ###   ########.fr       */
+/*   Updated: 2024/04/01 16:21:04 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rra(t_stack *stack_a)
+void	rra(t_stack *stack_a, bool print)
 {
-	ft_printf("rra\n");
+	if (print)
+		ft_printf("rra\n");
 	reverse_rotate(stack_a);
 }
 
-void	rrb(t_stack *stack_b)
+void	rrb(t_stack *stack_b, bool print)
 {
-	ft_printf("rrb\n");
+	if (print)
+		ft_printf("rrb\n");
 	reverse_rotate(stack_b);
 }
 
-void	rrr(t_node *stack_a, t_node *stack_b)
+void	rrr(t_stack *stack_a, t_stack *stack_b, bool print)
 {
-	ft_printf("rrr\n");
+	if (print)
+		ft_printf("rrr\n");
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);
 }

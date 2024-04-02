@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:37:59 by djin              #+#    #+#             */
-/*   Updated: 2024/02/24 20:34:50 by djin             ###   ########.fr       */
+/*   Updated: 2024/04/01 16:17:29 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# define BUFFER_SIZE 100
 # include "libft.h"
 # include "ft_printf.h"
 
@@ -53,6 +54,7 @@ typedef struct s_stack
 	struct s_node	*tail;
 }	t_stack;
 
+
 //checks
 long	ft_atol_checker(const char *str);
 void	error_exit(t_node *stack_a);
@@ -84,17 +86,17 @@ void	reverse_rotate(t_stack *stack);
 void	rotate(t_stack *stack);
 
 //operation_utilities
-void	sa(t_stack *stack_a);
-void	sb(t_stack *stack_b);
-void	ss(t_stack *stack_a, t_stack *stack_b);
-void	pa(t_stack *stack_a, t_stack *stack_b);
-void	pb(t_stack *stack_a, t_stack *stack_b);
-void	ra(t_stack *stack_a);
-void	rb(t_stack *stack_b);
-void	rr(t_stack *stack_a, t_stack *stack_b);
-void	rra(t_stack *stack_a);
-void	rrb(t_stack *stack_b);
-void	rrr(t_node *stack_a, t_node *stack_b);
+void	sa(t_stack *stack, bool print);
+void	sb(t_stack *stack, bool print);
+void	ss(t_stack *stack_a, t_stack *stack_b, bool print);
+void	pa(t_stack *stack_a, t_stack *stack_b, bool print);
+void	pb(t_stack *stack_a, t_stack *stack_b, bool print);
+void	ra(t_stack *stack, bool print);
+void	rb(t_stack *stack, bool print);
+void	rr(t_stack *stack_a, t_stack *stack_b, bool print);
+void	rra(t_stack *stack, bool print);
+void	rrb(t_stack *stack, bool print);
+void	rrr(t_stack *stack_a, t_stack *stack_b, bool print);
 
 //sorting
 void	sort_two(t_stack *stack);
@@ -131,5 +133,18 @@ void	sort_decending(t_stack *stack_b);
 
 //sort_big_utils
 void	sorting(t_stack *stack_a, t_stack *stack_b, int *steps, t_size *sort);
+
+// get next line
+char	*get_next_line(int fd);
+
+// checker
+void	check_input(t_stack *a, t_stack *b);
+
+// checker utils
+bool	is_valid(char *str);
+void	error_input(char *str);
+bool	not_empty(t_stack *stack_b);
+bool	is_not_sorted(t_stack *stack_a);
+void	sort(t_stack *stack_a, t_stack *stack_b, char *str);
 
 #endif
