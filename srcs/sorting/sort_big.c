@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_big.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:55:33 by codespace         #+#    #+#             */
-/*   Updated: 2024/04/03 14:43:42 by geibo            ###   ########.fr       */
+/*   Updated: 2024/04/03 17:27:49 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ void	lets_sort_acending(t_stack *stack_a, t_stack *stack_b)
 
 	sort = &(t_size){0};
 	sort->size = lst_count_num(stack_a);
-	sort->half_of_size = sort->size / 2;
-	while (sort->size-- > sort->half_of_size)
+	while (sort->size--)
 	{
 		add_index_to_stack(stack_a);
 		steps = malloc(sizeof(int) * (sort->size + 1));
@@ -49,7 +48,8 @@ void	lets_sort_decending(t_stack *stack_a, t_stack *stack_b)
 
 	sort = &(t_size){0};
 	sort->size = lst_count_num(stack_a);
-	while (sort->size--)
+	sort->half_of_size = sort->size / 2;
+	while (sort->size-- > sort->half_of_size)
 	{
 		add_index_to_stack(stack_a);
 		steps = malloc(sizeof(int) * (sort->size + 1));
