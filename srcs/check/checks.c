@@ -3,63 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:37:07 by djin              #+#    #+#             */
-/*   Updated: 2024/02/24 20:36:21 by djin             ###   ########.fr       */
+/*   Updated: 2024/04/03 15:26:18 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_space(char c)
+void	error_exit(char *str)
 {
-	char	*str;
+	ft_printf("%s", str);
+	exit(1);
+}
 
-	str = "\t\n\r\f\v ";
-	while (*str)
+bool	num_checks(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i])
 	{
-		if (*str == c)
-			return (1);
-		str++;
+		if (!ft_isdigit(str[i]))
+			return (false);
+		i++;
 	}
-	return (0);
+	return (true);
 }
 
 void	add_stack(t_stack *stack, int *i, char **argv)
 {
 	while (argv[++(*i)])
-		link_node(stack, create_stack(ft_atoi(argv[*i])));
-}
-
-void	error(char	*str)
-{
-	ft_printf("ERROR: %s\n", str);
-	exit(true);
-}
-
-long	ft_atol_checker(const char *str)
-{
-	int		is_neg;
-	long	results;
-
-	is_neg = 1;
-	results = 0;
-	if (check_space(*str))
-		str++;
-	if (*str == '-')
-		is_neg = -1;
-	if ((*str) == '-' || (*str) == '+')
-		str++;
-	while ((*str) >= '0' && (*str) <= '9')
 	{
-		results = (results * 10) + ((*str) - '0');
-		str++;
+		if (!num_checks(argv[*i]))
+			error_exit("Error\n");
+		link_node(stack, create_stack(ft_atoi(argv[*i])));
 	}
-	results = results * is_neg;
-	if (results > INT_MAX || results < INT_MAX)
-		error("Too Much Number Master");
-	return (results);
+	is_num_dup(stack);
 }
 
 void	print_stack(t_stack *a, t_stack *b, t_node *tmp_a, t_node *tmp_b)
@@ -88,12 +71,13 @@ void	print_stack(t_stack *a, t_stack *b, t_node *tmp_a, t_node *tmp_b)
 	}
 	ft_printf("\n");
 }
-	// tmp_a = a->head;
-	// ft_printf("\nindex: ");
-	// while (tmp_a)
-	// {
-	// 	ft_printf("%d, ", tmp_a->index);
-	// 	if (tmp_a->next == NULL)
-	// 		break ;
-	// 	tmp_a = tmp_a->next;
-	// }\
+
+// tmp_a = a->head;
+// ft_printf("\nindex: ");
+// while (tmp_a)
+// {
+// 	ft_printf("%d, ", tmp_a->index);
+// 	if (tmp_a->next == NULL)
+// 		break ;
+// 	tmp_a = tmp_a->next;
+// }

@@ -6,7 +6,7 @@
 /*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 06:55:33 by codespace         #+#    #+#             */
-/*   Updated: 2024/04/03 14:40:54 by geibo            ###   ########.fr       */
+/*   Updated: 2024/04/03 14:43:42 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	lets_sort_acending(t_stack *stack_a, t_stack *stack_b)
 {
 	int		*steps;
 	t_size	*sort;
-	int		index;
 	int		i;
 	t_node	*current_a;
 
@@ -45,7 +44,6 @@ void	lets_sort_decending(t_stack *stack_a, t_stack *stack_b)
 {
 	int		*steps;
 	t_size	*sort;
-	int		index;
 	int		i;
 	t_node	*current_a;
 

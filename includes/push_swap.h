@@ -6,7 +6,7 @@
 /*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:37:59 by djin              #+#    #+#             */
-/*   Updated: 2024/04/03 14:30:41 by geibo            ###   ########.fr       */
+/*   Updated: 2024/04/03 15:43:15 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,16 @@ typedef struct s_stack
 
 //checks
 long	ft_atol_checker(const char *str);
-void	error_exit(t_node *stack_a);
-int		check_space(char c);
-bool	num_checks(const char *str, t_node *stacks);
+void	error_exit(char *str);
+bool	num_checks(char *str);
 void	add_stack(t_stack *stack, int *i, char **argv);
 void	print_stack(t_stack *a, t_stack *b, t_node *tmp_a, t_node *tmp_b);
+
+//checks2
+bool	check_space(char c);
+void	error_free_exit(char *str, t_stack *stack_a);
+void	is_num_dup(t_stack *stack_a);
+bool	only_one_num(t_stack *stack_a);
 
 //check_numbers
 int		min_number(t_stack *stack);
@@ -102,6 +107,7 @@ void	sort_two(t_stack *stack);
 void	sort_three(t_stack *stack);
 void	sort_four(t_stack *stack_a, t_stack *stack_b);
 void	sort_five(t_stack *stack_a, t_stack *stack_b);
+void	sort_big(t_stack *stack_a, t_stack *stack_b);
 
 //sorting_utils
 void	rank(t_stack *stacks);
@@ -147,7 +153,7 @@ void	check_input(t_stack *a, t_stack *b);
 
 // checker utils
 bool	is_valid(char *str);
-void	error_input(char *str);
+void	error_input(char *str, char *input);
 bool	not_empty(t_stack *stack_b);
 bool	is_not_sorted(t_stack *stack_a);
 void	sort(t_stack *stack_a, t_stack *stack_b, char *str);

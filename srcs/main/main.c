@@ -6,7 +6,7 @@
 /*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 15:44:51 by djin              #+#    #+#             */
-/*   Updated: 2024/04/02 21:07:56 by geibo            ###   ########.fr       */
+/*   Updated: 2024/04/03 15:23:07 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	free_argv(char **argv)
 int	main(int argc, char **argv)
 {
 	int		i;
-	int		size;
 	t_stack	stack_a;
 	t_stack	stack_b;
 
@@ -40,6 +39,8 @@ int	main(int argc, char **argv)
 		i = -1;
 	if (argc > 1)
 		add_stack(&stack_a, &i, argv);
+	if (only_one_num(&stack_a))
+		error_free_exit("Error\n", &stack_a);
 	push_swap(&stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);

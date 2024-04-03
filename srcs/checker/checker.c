@@ -6,7 +6,7 @@
 /*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 17:16:13 by geibo             #+#    #+#             */
-/*   Updated: 2024/04/02 20:44:45 by geibo            ###   ########.fr       */
+/*   Updated: 2024/04/03 15:45:08 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,18 @@ void	check_input(t_stack *stack_a, t_stack *stack_b)
 {
 	char	*input;
 
+	if (!is_not_sorted(stack_a))
+	{
+		ft_printf("OK\n");
+		return ;
+	}
 	input = get_next_line(0);
 	if (input == NULL)
-		error_input("Error\n");
+		error_input("Error\n", input);
 	while (input != NULL)
 	{
 		if (!is_valid(input))
-		{
-			free(input);
-			error_input("Error\n");
-		}
+			error_input("Error\n", input);
 		sort(stack_a, stack_b, input);
 		free(input);
 		input = get_next_line(0);
@@ -52,7 +54,6 @@ int	main(int argc, char **argv)
 	t_stack	stack_a;
 	t_stack	stack_b;
 	int		i;
-	int		size;
 
 	stack_a = (t_stack){0};
 	stack_b = (t_stack){0};
@@ -65,6 +66,8 @@ int	main(int argc, char **argv)
 		i = -1;
 	if (argc > 1)
 		add_stack(&stack_a, &i, argv);
+	if (only_one_num(&stack_a))
+		error_free_exit("Error\n", &stack_a);
 	check_input(&stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);

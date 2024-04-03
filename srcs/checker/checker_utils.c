@@ -6,15 +6,17 @@
 /*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 14:04:33 by geibo             #+#    #+#             */
-/*   Updated: 2024/04/02 21:07:24 by geibo            ###   ########.fr       */
+/*   Updated: 2024/04/03 15:43:46 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	error_input(char *str)
+void	error_input(char *str, char *input)
 {
-	ft_putstr_fd("Error\n", 2);
+	ft_printf("%s", str);
+	if (input != NULL)
+		free(input);
 	exit(1);
 }
 

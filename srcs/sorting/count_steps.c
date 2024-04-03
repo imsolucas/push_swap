@@ -6,7 +6,7 @@
 /*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 03:20:39 by codespace         #+#    #+#             */
-/*   Updated: 2024/04/03 14:30:20 by geibo            ###   ########.fr       */
+/*   Updated: 2024/04/03 14:43:27 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	count_steps_to_top_a(t_stack *stack_a)
 {
 	t_node	*current_a;
 	int		size;
-	int		size_b;
 
 	size = lst_count_num(stack_a);
 	current_a = stack_a->head;
