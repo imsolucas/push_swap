@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 15:44:51 by djin              #+#    #+#             */
-/*   Updated: 2024/04/03 17:54:29 by djin             ###   ########.fr       */
+/*   Updated: 2024/04/03 18:58:17 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		if (argv[1][0] == '\0')
-			error_exit("Error\n");
+			return (0);
 		argv = ft_split(argv[1], ' ');
 		i = -1;
 	}
