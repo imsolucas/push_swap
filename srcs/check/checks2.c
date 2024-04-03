@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:55:18 by geibo             #+#    #+#             */
-/*   Updated: 2024/04/03 15:21:44 by geibo            ###   ########.fr       */
+/*   Updated: 2024/04/03 17:37:20 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ bool	check_space(char c)
 
 void	error_free_exit(char *str, t_stack *stack_a)
 {
-	ft_printf("%s", str);
+	ft_putstr_fd(str, 2);
 	free_stack(stack_a);
 	exit(1);
 }
