@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:37:59 by djin              #+#    #+#             */
-/*   Updated: 2024/04/03 15:43:15 by geibo            ###   ########.fr       */
+/*   Updated: 2024/04/03 17:55:21 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,18 @@ typedef struct s_stack
 long	ft_atol_checker(const char *str);
 void	error_exit(char *str);
 bool	num_checks(char *str);
-void	add_stack(t_stack *stack, int *i, char **argv);
+void	add_stack(t_stack *stack, int *i, char **argv, int argc);
 void	print_stack(t_stack *a, t_stack *b, t_node *tmp_a, t_node *tmp_b);
 
 //checks2
 bool	check_space(char c);
-void	error_free_exit(char *str, t_stack *stack_a);
-void	is_num_dup(t_stack *stack_a);
+void	error_free_exit(char *str, t_stack *stack_a, int argc, char **argv);
+void	is_num_dup(t_stack *stack_a, int argc, char **argv);
 bool	only_one_num(t_stack *stack_a);
+void	free_argv(char **argv);
+
+//checks3
+bool	is_sorted(t_stack *stack);
 
 //check_numbers
 int		min_number(t_stack *stack);

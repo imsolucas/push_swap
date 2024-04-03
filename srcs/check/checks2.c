@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:55:18 by geibo             #+#    #+#             */
-/*   Updated: 2024/04/03 17:37:20 by djin             ###   ########.fr       */
+/*   Updated: 2024/04/03 17:52:32 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,16 @@ bool	check_space(char c)
 	return (false);
 }
 
-void	error_free_exit(char *str, t_stack *stack_a)
+void	error_free_exit(char *str, t_stack *stack_a, int argc, char **argv)
 {
 	ft_putstr_fd(str, 2);
+	if (argc == 2)
+		free_argv(argv);
 	free_stack(stack_a);
 	exit(1);
 }
 
-void	is_num_dup(t_stack *stack_a)
+void	is_num_dup(t_stack *stack_a, int argc, char **argv)
 {
 	t_node	*current_a;
 	t_node	*tmp_a;
@@ -45,7 +47,7 @@ void	is_num_dup(t_stack *stack_a)
 		while (tmp_a)
 		{
 			if (current_a->num == tmp_a->num)
-				error_free_exit("Error\n", stack_a);
+				error_free_exit("Error\n", stack_a, argc, argv);
 			tmp_a = tmp_a->next;
 		}
 		current_a = current_a->next;

@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:37:07 by djin              #+#    #+#             */
-/*   Updated: 2024/04/03 17:37:39 by djin             ###   ########.fr       */
+/*   Updated: 2024/04/03 17:53:20 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ bool	num_checks(char *str)
 	return (true);
 }
 
-void	add_stack(t_stack *stack, int *i, char **argv)
+void	add_stack(t_stack *stack, int *i, char **argv, int argc)
 {
 	while (argv[++(*i)])
 	{
@@ -42,7 +42,7 @@ void	add_stack(t_stack *stack, int *i, char **argv)
 			error_exit("Error\n");
 		link_node(stack, create_stack(ft_atoi(argv[*i])));
 	}
-	is_num_dup(stack);
+	is_num_dup(stack, argc, argv);
 }
 
 void	print_stack(t_stack *a, t_stack *b, t_node *tmp_a, t_node *tmp_b)
