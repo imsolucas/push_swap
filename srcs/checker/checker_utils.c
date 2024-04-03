@@ -6,7 +6,7 @@
 /*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 14:04:33 by geibo             #+#    #+#             */
-/*   Updated: 2024/04/01 16:27:08 by geibo            ###   ########.fr       */
+/*   Updated: 2024/04/02 21:07:24 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	error_input(char *str)
 
 bool	is_valid(char *str)
 {
-	if (ft_strncmp(str, "sa\n", ft_strlen(str)) == 0 
+	if (ft_strncmp(str, "sa\n", ft_strlen(str)) == 0
 		|| ft_strncmp(str, "sb\n", ft_strlen(str)) == 0
 		|| ft_strncmp(str, "ss\n", ft_strlen(str)) == 0
 		|| ft_strncmp(str, "pa\n", ft_strlen(str)) == 0
@@ -47,7 +47,7 @@ bool	not_empty(t_stack *stack_b)
 
 bool	is_not_sorted(t_stack *stack_a)
 {
-	t_node *current_a;
+	t_node	*current_a;
 
 	current_a = stack_a->head;
 	while (current_a->next)

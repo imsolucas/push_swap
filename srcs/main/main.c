@@ -6,7 +6,7 @@
 /*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 15:44:51 by djin              #+#    #+#             */
-/*   Updated: 2024/04/01 16:22:59 by geibo            ###   ########.fr       */
+/*   Updated: 2024/04/02 21:07:56 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ int	main(int argc, char **argv)
 		i = -1;
 	if (argc > 1)
 		add_stack(&stack_a, &i, argv);
-	// push_swap(&stack_a, &stack_b);
-	print_stack(&stack_a, &stack_b, NULL, NULL);
+	push_swap(&stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	if (argc == 2)
 		free_argv(argv);
 }
+// print_stack(&stack_a, &stack_b, NULL, NULL);

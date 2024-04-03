@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   count_steps.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 03:20:39 by codespace         #+#    #+#             */
-/*   Updated: 2024/02/24 20:31:24 by djin             ###   ########.fr       */
+/*   Updated: 2024/04/03 14:30:20 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ void	count_steps_to_top_a(t_stack *stack_a)
 	}
 }
 
-void	count_steps_to_top_b(t_stack *stack_b, t_node *current_a)
+void	max_steps_to_top_b(t_node *current_a, t_stack *stack_b)
 {
-	t_node	*current_b;
 	int		max_b;
 	int		size_b;
+	t_node	*current_b;
 
 	max_b = max_number(stack_b);
 	size_b = lst_count_num(stack_b);
@@ -50,15 +50,6 @@ void	count_steps_to_top_b(t_stack *stack_b, t_node *current_a)
 		}
 		current_b = current_b->next;
 	}
-}
-
-void	set_up_count_rotations(t_stack *stack_a, t_stack *stack_b)
-{
-	set_every_step_to_zero(stack_a);
-	count_steps_to_top_a(stack_a);
-	steps_to_handle_min_max(stack_a, stack_b);
-	steps_to_handle_num_between(stack_a, stack_b);
-	set_rr_rrr(stack_a);
 }
 
 void	count_b_steps(t_node *current_a, t_stack *stack_b, t_node *current_b)

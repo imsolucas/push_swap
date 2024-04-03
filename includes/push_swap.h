@@ -6,7 +6,7 @@
 /*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:37:59 by djin              #+#    #+#             */
-/*   Updated: 2024/04/01 16:17:29 by geibo            ###   ########.fr       */
+/*   Updated: 2024/04/03 14:30:41 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ typedef struct s_stack
 	struct s_node	*head;
 	struct s_node	*tail;
 }	t_stack;
-
 
 //checks
 long	ft_atol_checker(const char *str);
@@ -107,12 +106,12 @@ void	sort_five(t_stack *stack_a, t_stack *stack_b);
 //sorting_utils
 void	rank(t_stack *stacks);
 void	add_index_to_stack(t_stack *stack);
-void	steps_to_handle_num_between(t_stack *stack_a, t_stack *stack_b);
 void	set_every_step_to_zero(t_stack *stack);
 void	steps_to_handle_min_max(t_stack *stack_a, t_stack *stack_b);
 
 //sorting_utils2
 void	sort_in_between(t_node *current_a, t_stack *stack_b);
+void	sort_out_between(t_node *current_a, t_stack *stack_b);
 
 //run_steps_utils
 void	set_rr_rrr(t_stack *stack_a);
@@ -120,12 +119,18 @@ void	run_steps(t_node *current, t_stack *stack_a, t_stack *stack_b);
 
 //count_steps
 void	count_steps_to_top_a(t_stack *stack_a);
-void	count_steps_to_top_b(t_stack *stack_b, t_node *current_a);
-void	set_up_count_rotations(t_stack *stack_a, t_stack *stack_b);
+void	max_steps_to_top_b(t_node *current_a, t_stack *stack_b);
 void	count_b_steps(t_node *current_a, t_stack *stack_b, t_node *current_b);
+
+//lets_sort_decending
+void	set_up_count_rotations(t_stack *stack_a, t_stack *stack_b);
+
+//lets_sort_acending
+void	set_down_count_rotations(t_stack *stack_a, t_stack *stack_b);
 
 //sort_big
 void	lets_sort_decending(t_stack *stack_a, t_stack *stack_b);
+void	lets_sort_acending(t_stack *stack_a, t_stack *stack_b);
 void	empty_stack_b(t_stack *stack_a, t_stack *stack_b);
 
 //sort_decending

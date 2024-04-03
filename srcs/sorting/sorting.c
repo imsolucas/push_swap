@@ -6,7 +6,7 @@
 /*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:38:07 by djin              #+#    #+#             */
-/*   Updated: 2024/04/01 16:22:32 by geibo            ###   ########.fr       */
+/*   Updated: 2024/04/03 14:40:26 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	sort_big(t_stack *stack_a, t_stack *stack_b)
 {
 	pb(stack_a, stack_b, true);
 	pb(stack_a, stack_b, true);
+	lets_sort_acending(stack_a, stack_b);
 	lets_sort_decending(stack_a, stack_b);
 	empty_stack_b(stack_a, stack_b);
 }
