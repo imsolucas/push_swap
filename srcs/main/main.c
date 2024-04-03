@@ -6,7 +6,7 @@
 /*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 15:44:51 by djin              #+#    #+#             */
-/*   Updated: 2024/04/03 18:58:17 by djin             ###   ########.fr       */
+/*   Updated: 2024/04/03 19:17:26 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,7 @@ int	main(int argc, char **argv)
 	}
 	if (argc > 1)
 		add_stack(&stack_a, &i, argv, argc);
-	if (only_one_num(&stack_a) || is_sorted(&stack_a))
-		error_free_exit("Error\n", &stack_a, argc, argv);
+	check_errors(&stack_a, argc, argv);
 	push_swap(&stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
