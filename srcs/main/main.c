@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 15:44:51 by djin              #+#    #+#             */
-/*   Updated: 2024/04/03 19:17:26 by djin             ###   ########.fr       */
+/*   Updated: 2024/04/03 23:13:15 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		if (argv[1][0] == '\0')
-			return (0);
+			error_exit("Error\n");
 		argv = ft_split(argv[1], ' ');
 		i = -1;
 	}

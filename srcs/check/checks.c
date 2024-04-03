@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:37:07 by djin              #+#    #+#             */
-/*   Updated: 2024/04/03 19:07:33 by djin             ###   ########.fr       */
+/*   Updated: 2024/04/03 23:06:43 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ bool	num_checks(char *str)
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
+	if (str[i] == '\0')
+		return (false);
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
@@ -40,7 +42,7 @@ void	add_stack(t_stack *stack, int *i, char **argv, int argc)
 	{
 		if (!num_checks(argv[*i]))
 			error_exit("Error\n");
-		link_node(stack, create_stack(ft_atoi(argv[*i])));
+		link_node(stack, create_stack(ft_atol(argv[*i], stack, argc, argv)));
 	}
 	is_num_dup(stack, argc, argv);
 }

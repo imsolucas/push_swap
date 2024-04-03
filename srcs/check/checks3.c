@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks3.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 17:48:36 by djin              #+#    #+#             */
-/*   Updated: 2024/04/03 19:23:48 by djin             ###   ########.fr       */
+/*   Updated: 2024/04/03 23:17:48 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,34 @@ bool	is_sorted(t_stack *stack)
 
 void	check_errors(t_stack *stack_a, int argc, char **argv)
 {
-	// if (only_one_num(stack_a))
-	// 	error_free_exit("NULL", stack_a, argc, argv);
 	if (is_sorted(stack_a))
 		error_free_exit(NULL, stack_a, argc, argv);
+}
+
+int	ft_atol(char *str, t_stack *stack_a, int argc, char **argv)
+{
+	int				i;
+	long long int	num;
+	int				sign;
+
+	i = 0;
+	num = 0;
+	sign = 1;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			error_free_exit("Error\n", stack_a, argc, argv);
+		num = (num * 10) + (str[i] - '0');
+		i++;
+	}
+	num *= sign;
+	if ((num * sign) >= 2147483648 || (num * sign) <= -2147483649)
+		error_free_exit("Error\n", stack_a, argc, argv);
+	return ((int)num);
 }

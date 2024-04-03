@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:37:59 by djin              #+#    #+#             */
-/*   Updated: 2024/04/03 19:16:43 by djin             ###   ########.fr       */
+/*   Updated: 2024/04/03 23:06:06 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ typedef struct s_stack
 }	t_stack;
 
 //checks
-long	ft_atol_checker(const char *str);
 void	error_exit(char *str);
 bool	num_checks(char *str);
 void	add_stack(t_stack *stack, int *i, char **argv, int argc);
@@ -71,6 +70,7 @@ void	free_argv(char **argv);
 //checks3
 bool	is_sorted(t_stack *stack);
 void	check_errors(t_stack *stack_a, int argc, char **argv);
+int		ft_atol(char *str, t_stack *stack_a, int argc, char **argv);
 
 //check_numbers
 int		min_number(t_stack *stack);

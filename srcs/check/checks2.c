@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:55:18 by geibo             #+#    #+#             */
-/*   Updated: 2024/04/03 19:07:13 by djin             ###   ########.fr       */
+/*   Updated: 2024/04/03 23:11:14 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	error_free_exit(char *str, t_stack *stack_a, int argc, char **argv)
 	if (argc == 2)
 		free_argv(argv);
 	free_stack(stack_a);
-	exit(1);
+	exit(0);
 }
 
 void	is_num_dup(t_stack *stack_a, int argc, char **argv)
