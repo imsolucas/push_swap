@@ -6,7 +6,7 @@
 /*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 17:16:13 by geibo             #+#    #+#             */
-/*   Updated: 2024/04/03 15:45:08 by geibo            ###   ########.fr       */
+/*   Updated: 2024/04/04 14:17:05 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,9 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 		i = -1;
 	if (argc > 1)
-		add_stack(&stack_a, &i, argv);
+		add_stack(&stack_a, &i, argv, argc);
 	if (only_one_num(&stack_a))
-		error_free_exit("Error\n", &stack_a);
+		error_free_exit("Error\n", &stack_a, argc, argv);
 	check_input(&stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);

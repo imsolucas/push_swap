@@ -6,7 +6,7 @@
 /*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 19:35:41 by djin              #+#    #+#             */
-/*   Updated: 2024/04/03 22:56:06 by geibo            ###   ########.fr       */
+/*   Updated: 2024/04/04 00:48:49 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int			i;
-	long long	result;
-	int			sign;
+	int		i;
+	int		result;
+	int		sign;
 
 	i = 0;
 	sign = 1;
@@ -37,10 +37,10 @@ int	ft_atoi(const char *str)
 	return (result * sign);
 }
 
-/*int	main(void)
+int	main(void)
 {
 	char str[] = "     -4a2    ";
 
 	printf("%d\n", ft_atoi(str));
 	printf("%d\n", atoi(str));
-}*/
+}
