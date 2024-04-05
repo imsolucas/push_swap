@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 17:16:13 by geibo             #+#    #+#             */
-/*   Updated: 2024/04/04 14:17:05 by geibo            ###   ########.fr       */
+/*   Updated: 2024/04/05 10:00:27 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,11 @@ void	check_input(t_stack *stack_a, t_stack *stack_b)
 {
 	char	*input;
 
-	if (!is_not_sorted(stack_a))
-	{
-		ft_printf("OK\n");
-		return ;
-	}
 	input = get_next_line(0);
-	if (input == NULL)
-		error_input("Error\n", input);
 	while (input != NULL)
 	{
 		if (!is_valid(input))
-			error_input("Error\n", input);
+			error_input("Error\n", input, stack_a);
 		sort(stack_a, stack_b, input);
 		free(input);
 		input = get_next_line(0);
@@ -61,13 +54,14 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		return (0);
 	if (argc == 2)
+	{
+		if (argv[1][0] == '\0')
+			error_exit("Error\n");
 		argv = ft_split(argv[1], ' ');
-	if (argc == 2)
 		i = -1;
+	}
 	if (argc > 1)
 		add_stack(&stack_a, &i, argv, argc);
-	if (only_one_num(&stack_a))
-		error_free_exit("Error\n", &stack_a, argc, argv);
 	check_input(&stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);

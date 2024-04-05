@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 18:37:59 by djin              #+#    #+#             */
-/*   Updated: 2024/04/03 23:06:06 by geibo            ###   ########.fr       */
+/*   Updated: 2024/04/05 08:47:07 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,7 +158,7 @@ void	check_input(t_stack *a, t_stack *b);
 
 // checker utils
 bool	is_valid(char *str);
-void	error_input(char *str, char *input);
+void	error_input(char *str, char *input, t_stack *stack_a);
 bool	not_empty(t_stack *stack_b);
 bool	is_not_sorted(t_stack *stack_a);
 void	sort(t_stack *stack_a, t_stack *stack_b, char *str);

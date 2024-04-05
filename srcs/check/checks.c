@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 13:37:07 by djin              #+#    #+#             */
-/*   Updated: 2024/04/03 23:06:43 by geibo            ###   ########.fr       */
+/*   Updated: 2024/04/05 09:54:21 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	add_stack(t_stack *stack, int *i, char **argv, int argc)
 	while (argv[++(*i)])
 	{
 		if (!num_checks(argv[*i]))
-			error_exit("Error\n");
+			error_free_exit("Error\n", stack, argc, argv);
 		link_node(stack, create_stack(ft_atol(argv[*i], stack, argc, argv)));
 	}
 	is_num_dup(stack, argc, argv);

@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   checker_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 14:04:33 by geibo             #+#    #+#             */
-/*   Updated: 2024/04/03 15:43:46 by geibo            ###   ########.fr       */
+/*   Updated: 2024/04/05 08:52:55 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	error_input(char *str, char *input)
+void	error_input(char *str, char *input, t_stack *stack_a)
 {
-	ft_printf("%s", str);
+	ft_putstr_fd(str, 2);
+	free_stack(stack_a);
 	if (input != NULL)
 		free(input);
 	exit(1);
