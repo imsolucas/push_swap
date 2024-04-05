@@ -2,7 +2,7 @@
 NAME = push_swap
 CC = gcc
 RM = rm -rf
-CFLAGS = -Wall -Werror -Wextra -ggdb -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra #-ggdb -fsanitize=address
 INCLUDES = -Iincludes -Ilib/libft -Ilib/ft_printf
 
 # Source files
