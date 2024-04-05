@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/31 17:16:13 by geibo             #+#    #+#             */
-/*   Updated: 2024/04/05 10:00:27 by djin             ###   ########.fr       */
+/*   Updated: 2024/04/05 10:29:13 by geibo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	check_input(t_stack *stack_a, t_stack *stack_b)
 		input = get_next_line(0);
 	}
 	free(input);
-	if (!is_not_sorted(stack_a))
+	if (!is_not_sorted(stack_a) || lst_count_num(stack_b))
 		ft_putstr_fd("OK\n", 1);
 	else
 		ft_putstr_fd("KO\n", 1);
