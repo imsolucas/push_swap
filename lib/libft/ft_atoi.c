@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: geibo <geibo@student.42.fr>                +#+  +:+       +#+        */
+/*   By: djin <djin@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/30 19:35:41 by djin              #+#    #+#             */
-/*   Updated: 2024/04/04 00:48:49 by geibo            ###   ########.fr       */
+/*   Updated: 2024/04/05 08:01:29 by djin             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	result = 0;
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-	{
 		i++;
-	}
 	if (str[i] == '-')
 		sign = -1;
 	if (str[i] == '+' || str[i] == '-')
@@ -37,10 +35,10 @@ int	ft_atoi(const char *str)
 	return (result * sign);
 }
 
-int	main(void)
-{
-	char str[] = "     -4a2    ";
+// int	main(void)
+// {
+// 	char str[] = "     -4a2    ";
 
-	printf("%d\n", ft_atoi(str));
-	printf("%d\n", atoi(str));
-}
+// 	printf("%d\n", ft_atoi(str));
+// 	printf("%d\n", atoi(str));
+// }
